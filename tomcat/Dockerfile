@@ -5,6 +5,7 @@ ENV PATH $CATALINA_HOME/bin:$PATH
 RUN mkdir -p "$CATALINA_HOME"
 RUN mkdir -p "$CATALINA_HOME/webapps/videogamesearch"
 COPY . "$CATALINA_HOME/webapps/videogamesearch"
+RUN mkdir -p "$CATALINA_HOME/webapps/videogamesearch/WEB-INF/classes"
 WORKDIR $CATALINA_HOME
 
 # let "Tomcat Native" live somewhere isolated
