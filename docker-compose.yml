@@ -2,9 +2,11 @@ version: '3'
 
 services:
   tomcat:
-    image: tomcat
+    build: ./tomcat
     ports:
       - "8000:8080"
+    volumes:
+      - ./tomcat:/usr/local/tomcat/webapps/videogamesearch
 
   mysql:
     image: mysql:5.7
