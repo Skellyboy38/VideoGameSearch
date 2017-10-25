@@ -5,7 +5,6 @@ ENV PATH $CATALINA_HOME/bin:$PATH
 RUN mkdir -p "$CATALINA_HOME"
 RUN mkdir -p "$CATALINA_HOME/webapps/videogamesearch"
 COPY . "$CATALINA_HOME/webapps/videogamesearch"
-RUN mkdir -p "$CATALINA_HOME/webapps/videogamesearch/WEB-INF/classes"
 WORKDIR $CATALINA_HOME
 
 # let "Tomcat Native" live somewhere isolated
@@ -141,8 +140,7 @@ RUN set -e \
 		exit 1; \
 	fi
 
-RUN apt-get install default-jdk
-RUN javac -classpath "$CATALINA_HOME/lib/servlet-api.jar" *.java && mv *.class "$CATALINA_HOME/videogamesearch/WEB-INF/classes"
+RUN apt-get update && apt-get install -y default-jdk
 
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
