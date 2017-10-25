@@ -9,12 +9,8 @@ services:
       - ./tomcat:/usr/local/tomcat/webapps/videogamesearch
 
   mysql:
-    image: mysql:5.7
-    volumes:
-      - ./mysql:/var/lib/mysql
+    build: ./sql
     restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: videogames
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
+
+volumes:
+  db_data:

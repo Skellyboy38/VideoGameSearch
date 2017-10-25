@@ -4,17 +4,11 @@ import javax.servlet.http.*;
 
 public class VideoGameSearchServlet extends HttpServlet {
 
-    private String message;
-
-    public void init() throws ServletException {
-        message = "Hello world";
-    }
+    public void init() throws ServletException {}
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
-
-        PrintWriter out = response.getWriter();
-        out.println("<h1>" + message + "</h1>");
+        request.getRequestDispatcher("/home.jsp").forward(request, response);
     }
 
     public void destroy() {
