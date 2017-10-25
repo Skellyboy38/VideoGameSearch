@@ -3,10 +3,9 @@
     "http://java.sun.com/dtd/web-app_2_3.dtd">
 <web-app>
     <servlet>
-        <servlet-name>VideoGameSearchServlet</servlet-name>
-        <servlet-class>ServletPackage.videoGameSearchServlet</servlet-class>
+        <servlet-name>videoGameSearchServlet</servlet-name>
+        <servlet-class>VideoGameSearchServlet</servlet-class>
     </servlet>
-
 
     <servlet-mapping>
         <servlet-name>videoGameSearchServlet</servlet-name>

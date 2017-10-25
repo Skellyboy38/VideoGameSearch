@@ -3,6 +3,8 @@ FROM openjdk:8-jre
 ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
 RUN mkdir -p "$CATALINA_HOME"
+RUN mkdir -p "$CATALINA_HOME/webapps/videogamesearch"
+COPY . "$CATALINA_HOME/webapps/videogamesearch"
 WORKDIR $CATALINA_HOME
 
 # let "Tomcat Native" live somewhere isolated
@@ -137,6 +139,9 @@ RUN set -e \
 		echo >&2 "$nativeLines"; \
 		exit 1; \
 	fi
+
+RUN apt-get install default-jdk
+RUN javac -classpath "$CATALINA_HOME/lib/servlet-api.jar" *.java && mv *.class "$CATALINA_HOME/videogamesearch/WEB-INF/classes"
 
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
