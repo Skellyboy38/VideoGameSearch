@@ -2,7 +2,7 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-public class VideoGameSearchServlet extends HttpServlet {
+public class HomeServlet extends HttpServlet {
 
     public void init() throws ServletException {}
 

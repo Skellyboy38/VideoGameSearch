@@ -141,6 +141,7 @@ RUN set -e \
 	fi
 
 RUN apt-get update && apt-get install -y default-jdk
+COPY ./jars "$CATALINA_HOME/lib"
 
 EXPOSE 8080
 CMD ["catalina.sh", "run"]

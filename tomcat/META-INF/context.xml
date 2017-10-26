@@ -1,0 +1,21 @@
+<Context>
+
+<Resource name="jdbc/videogamesearch"
+
+auth="Container"
+
+type="javax.sql.DataSource"
+
+username="root"
+
+password="password"
+
+driverClassName="com.mysql.jdbc.Driver"
+
+url="jdbc:mysql:/videogamesearch:3306/"
+
+maxActive="15"
+
+maxIdle="3"/>
+
+</Context>
