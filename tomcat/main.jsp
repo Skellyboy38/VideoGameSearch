@@ -1,3 +1,3 @@
 <%@ page session="true" %>
 
-<h3>Welcome <c:out value="${sessionScope.username}"/></h3>
+<h3>Welcome <%= session.getAttribute("username") %></h3>

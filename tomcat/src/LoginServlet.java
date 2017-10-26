@@ -28,8 +28,9 @@ public class LoginServlet extends HttpServlet {
             ps.setString(2, password);
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
-                request.getSession().setAttribute("username", username);
-                response.sendRedirect("main.jsp");
+                HttpSession session = request.getSession();
+                session.setAttribute("username", username);
+                response.sendRedirect("home.jsp");
             }
             else {
                 out.println("Invalid password <a href='home.jsp'>try again</a>");
