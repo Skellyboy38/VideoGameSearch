@@ -2,40 +2,19 @@
 <html>
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
 <link rel="stylesheet" href="main.css">
+<script src="//code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script>
 $(document).ready(function() {
-  $(".search").keyup(function () {
-    var searchTerm = $(".search").val();
-    var listItem = $('.results tbody').children('tr');
-    var searchSplit = searchTerm.replace(/ /g, "'):containsi('")
-
-  $.extend($.expr[':'], {'containsi': function(elem, i, match, array){
-        return (elem.textContent || elem.innerText || '').toLowerCase().indexOf((match[3] || "").toLowerCase()) >= 0;
-    }
-  });
-
-  $(".results tbody tr").not(":containsi('" + searchSplit + "')").each(function(e){
-    $(this).attr('visible','false');
-  });
-
-  $(".results tbody tr:containsi('" + searchSplit + "')").each(function(e){
-    $(this).attr('visible','true');
-  });
-
-  var jobCount = $('.results tbody tr[visible="true"]').length;
-    $('.counter').text(jobCount + ' item');
-
-  if(jobCount == '0') {$('.no-result').show();}
-    else {$('.no-result').hide();}
-		  });
+  $('#videogames').DataTable();
 });
 </script>
 </head>
 <body>
-<h3>Welcome to VideoGameSearch</h3>
+<h3 class="centercustom">Welcome to VideoGameSearch</h3>
 <% if(session.getAttribute("username") == null) { %>
 <h4>Log in below</h4>
 <br/>
@@ -72,10 +51,7 @@ ResultSet games = null;
             e.printStackTrace();
         }
 %>
-<div class="form-group pull-right">
-    <input type="text" class="search form-control" placeholder="What you looking for?">
-</div>
-<table class="table table-hover table-bordered results">
+<table id="videogames" class="table table-hover table-bordered" cellspacing="0" width="100%">
     <thead>
         <th >Game ID</th>
         <th>Name</th>
@@ -91,12 +67,9 @@ ResultSet games = null;
         <th>Back box art</th>
     </thead>
     <tbody>
-            <tr class="warning no-result">
-                <td colspan="4"><i class="fa fa-warning"></i> No result</td>
-            </tr>
         <% while(games.next()) { %>
             <tr>
-                <td scope="row"><%= games.getString("game_id") %></td>
+                <td><%= games.getString("game_id") %></td>
                 <td><%= games.getString("game_name") %></td>
                 <td><%= games.getString("game_description") %></td>
                 <td><%= games.getString("console") %></td>
