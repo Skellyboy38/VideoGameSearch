@@ -3,7 +3,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.sql.*;
 
-public class LoginServlet extends HttpServlet {
+public class RegisterServlet extends HttpServlet {
 
     public void init() throws ServletException {}
 
@@ -20,24 +20,18 @@ public class LoginServlet extends HttpServlet {
 	        //loading drivers for mysql
             Class.forName("com.mysql.jdbc.Driver");
  	        //creating connection with the database
-            con=DriverManager.getConnection
+            con = DriverManager.getConnection
                         ("jdbc:mysql://videogamesearch_mysql_1:3306/videogames?autoReconnect=true&useSSL=false","root","password");
-            PreparedStatement ps =con.prepareStatement
-                             ("select * from user where user_id=? and password=?");
+            PreparedStatement ps = con.prepareStatement
+                             ("insert into user(user_id, password) values(?,?)");
             ps.setString(1, username);
             ps.setString(2, password);
-            ResultSet rs = ps.executeQuery();
-            if(rs.next()){
-                request.getSession().setAttribute("username", username);
-                response.sendRedirect("main.jsp");
-            }
-            else {
-                out.println("Invalid password <a href='home.jsp'>try again</a>");
-                response.sendRedirect("home.jsp");
-            }
+            int rs = ps.executeUpdate();
+            response.sendRedirect("home.jsp");
         }
         catch(Exception e){
-          e.printStackTrace();
+            e.printStackTrace();
+            response.sendRedirect("home.jsp");
         }
         finally {
             try {

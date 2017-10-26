@@ -10,7 +10,7 @@
 
 <h4>Register for new users</h4>
 <br/>
-<form action="register.jsp" method="post">
+<form action="register" method="post">
     Username:<input type="text" name="username"/>
     Password:<input type="password" name="password"/>
     <input type="submit" value="register"/>
