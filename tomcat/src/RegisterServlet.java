@@ -17,9 +17,7 @@ public class RegisterServlet extends HttpServlet {
 
         Connection con = null;
         try{
-	        //loading drivers for mysql
             Class.forName("com.mysql.jdbc.Driver");
- 	        //creating connection with the database
             con = DriverManager.getConnection
                         ("jdbc:mysql://videogamesearch_mysql_1:3306/videogames?autoReconnect=true&useSSL=false","root","password");
             PreparedStatement ps = con.prepareStatement

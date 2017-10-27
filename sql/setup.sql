@@ -41,11 +41,11 @@ CREATE TABLE videogames.game (
 );
 
 CREATE TABLE videogames.comments (
-    comment_id VARCHAR(30),
+    comment_id int NOT NULL AUTO_INCREMENT,
     user_id VARCHAR(30),
     game_id VARCHAR(30),
     comment_date VARCHAR(30),
-    comment_details VARCHAR(30),
+    comment_details VARCHAR(8000),
     ratings VARCHAR(30),
     PRIMARY KEY (comment_id),
     FOREIGN KEY (user_id)
