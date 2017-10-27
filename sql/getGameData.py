@@ -1,6 +1,8 @@
 import requests
 import xml.etree.ElementTree as ET
 from pathlib import Path
+import random
+from random import randint
 
 
 def get_data():
@@ -118,6 +120,7 @@ developer, publisher, front_box_art, back_box_art, logo, developer_logo, price, 
 VALUES('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');
 
             """
+            discount = str(randint(0, 100)) if randint(0, 2) == 1 else "0"
             sql_data += insert_query % (
                 game['id'].replace("'", ""),
                 game['GameTitle'].replace("'", ""),
@@ -133,8 +136,8 @@ VALUES('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '
                 game['back_box_art'].replace("'", ""),
                 'N/A',
                 'N/A',
-                'N/A',
-                'N/A'
+                str(round(random.uniform(10, 150), 2)),
+                discount
             )
         with open("setup.sql", "a+") as f:
             f.write(sql_data)

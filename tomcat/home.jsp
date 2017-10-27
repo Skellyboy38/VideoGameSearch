@@ -41,12 +41,15 @@ $(document).ready(function() {
 
 <% if(session.getAttribute("registration_error") != null) { %>
     <h5><%= session.getAttribute("registration_error") %></h5>
-<%}%>
+<%} else if(session.getAttribute("registration_confirmed") != null) {%>
+    <h5><%= session.getAttribute("registration_confirmed") %></h5>
+<% } %>
 
 <% } else { %>
 <h4>Logged in as <%= session.getAttribute("username") %></h4>
 
 <form action="specials" method="post">
+    <input type="hidden" name="username" value='<%= session.getAttribute("username") %>'/>
     <input type="submit" value="view specials">
 </form>
 <form action="logout" method="post">

@@ -8,6 +8,9 @@ public class HomeServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
+        request.getSession().removeAttribute("login_error");
+        request.getSession().removeAttribute("registration_error");
+        request.getSession().removeAttribute("registration_confirmed");
         request.getRequestDispatcher("/home.jsp").forward(request, response);
     }
 
@@ -18,6 +21,9 @@ public class HomeServlet extends HttpServlet {
             request.getSession().setAttribute("username", username);
         }
         response.setContentType("text/html");
+        request.getSession().removeAttribute("login_error");
+        request.getSession().removeAttribute("registration_error");
+        request.getSession().removeAttribute("registration_confirmed");
         request.getRequestDispatcher("/home.jsp").forward(request, response);
     }
 
