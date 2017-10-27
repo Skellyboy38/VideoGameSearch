@@ -16,6 +16,8 @@ $(document).ready(function() {
 <body>
 <h3 class="centercustom">Welcome to VideoGameSearch</h3>
 <% if(session.getAttribute("username") == null) { %>
+
+<hr>
 <h4>Log in below</h4>
 <br/>
 <form action="login" method="post">
@@ -24,6 +26,11 @@ $(document).ready(function() {
     <input type="submit" value="login"/>
 </form>
 
+<% if(session.getAttribute("login_error") != null) { %>
+    <h5><%= session.getAttribute("login_error") %></h5>
+<%}%>
+
+<hr>
 <h4>Register for new users</h4>
 <br/>
 <form action="register" method="post">
@@ -31,8 +38,20 @@ $(document).ready(function() {
     Password:<input type="password" name="password"/>
     <input type="submit" value="register"/>
 </form>
+
+<% if(session.getAttribute("registration_error") != null) { %>
+    <h5><%= session.getAttribute("registration_error") %></h5>
+<%}%>
+
 <% } else { %>
-<h4>Logged in as <%= session.getAttribute("username") %> <a>  View specials</a> </h4>
+<h4>Logged in as <%= session.getAttribute("username") %></h4>
+
+<form action="specials" method="post">
+    <input type="submit" value="view specials">
+</form>
+<form action="logout" method="post">
+    <input type="submit" value="logout">
+</form>
 <% } %>
 <hr>
 <h5>List of current video games</h5>
@@ -71,7 +90,7 @@ ResultSet games = null;
             <tr>
                 <td><%= games.getString("game_id") %></td>
                 <td><%= games.getString("game_name") %></td>
-                <td><%= games.getString("game_description") %></td>
+                <td><div style="height:200px; overflow:hidden"><%= games.getString("game_description") %></div></td>
                 <td><%= games.getString("console") %></td>
                 <td><%= games.getString("num_players") %></td>
                 <td><%= games.getString("coop") %></td>
@@ -79,8 +98,8 @@ ResultSet games = null;
                 <td><%= games.getString("release_date") %></td>
                 <td><%= games.getString("developer") %></td>
                 <td><%= games.getString("publisher") %></td>
-                <td><img src='<%= games.getString("front_box_art") %>' height="100" width="100"></td>
-                <td><img src='<%= games.getString("back_box_art") %>' height="100" width="100"></td>
+                <td><img src='<%= games.getString("front_box_art") %>' height="200" width="200"></td>
+                <td><img src='<%= games.getString("back_box_art") %>' height="200" width="200"></td>
             </tr>
         <% } %>
     </tbody>

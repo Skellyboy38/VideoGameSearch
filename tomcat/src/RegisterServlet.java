@@ -27,11 +27,15 @@ public class RegisterServlet extends HttpServlet {
             ps.setString(1, username);
             ps.setString(2, password);
             int rs = ps.executeUpdate();
-            response.sendRedirect("home.jsp");
+            HttpSession session = request.getSession();
+            session.removeAttribute("registration_error");
+            request.getRequestDispatcher("home.jsp").forward(request, response);
         }
         catch(Exception e){
             e.printStackTrace();
-            response.sendRedirect("home.jsp");
+            HttpSession session = request.getSession();
+            session.setAttribute("registration_error", "User already exists");
+            request.getRequestDispatcher("home.jsp").forward(request, response);
         }
         finally {
             try {

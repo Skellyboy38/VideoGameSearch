@@ -30,15 +30,17 @@ public class LoginServlet extends HttpServlet {
             if(rs.next()){
                 HttpSession session = request.getSession();
                 session.setAttribute("username", username);
-                response.sendRedirect("home.jsp");
+                session.removeAttribute("login_error");
+                request.getRequestDispatcher("home.jsp").forward(request, response);
             }
             else {
-                out.println("Invalid password <a href='home.jsp'>try again</a>");
-                response.sendRedirect("home.jsp");
+                HttpSession session = request.getSession();
+                session.setAttribute("login_error", "Incorrect login");
+                request.getRequestDispatcher("home.jsp").forward(request, response);
             }
         }
         catch(Exception e){
-          e.printStackTrace();
+            e.printStackTrace();
         }
         finally {
             try {
