@@ -62,7 +62,7 @@ ResultSet games = null;
             Class.forName("com.mysql.jdbc.Driver");
             con=DriverManager.getConnection
                         ("jdbc:mysql://videogamesearch_mysql_1:3306/videogames?autoReconnect=true&useSSL=false","root","password");
-            PreparedStatement ps =con.prepareStatement
+            PreparedStatement ps = con.prepareStatement
                              ("select * from game");
             games = ps.executeQuery();
         }
@@ -72,9 +72,8 @@ ResultSet games = null;
 %>
 <table id="videogames" class="table table-hover table-bordered" cellspacing="0" width="100%">
     <thead>
-        <th >Game ID</th>
+        <th>Game ID</th>
         <th>Name</th>
-        <th>Description</th>
         <th>Console</th>
         <th>Number of players</th>
         <th>Coop</th>
@@ -82,15 +81,13 @@ ResultSet games = null;
         <th>Release Date</th>
         <th>Developer</th>
         <th>Publisher</th>
-        <th>Front box art</th>
-        <th>Back box art</th>
+        <th>More Info</th>
     </thead>
     <tbody>
         <% while(games.next()) { %>
             <tr>
                 <td><%= games.getString("game_id") %></td>
                 <td><%= games.getString("game_name") %></td>
-                <td><div style="height:200px; overflow:hidden"><%= games.getString("game_description") %></div></td>
                 <td><%= games.getString("console") %></td>
                 <td><%= games.getString("num_players") %></td>
                 <td><%= games.getString("coop") %></td>
@@ -98,8 +95,15 @@ ResultSet games = null;
                 <td><%= games.getString("release_date") %></td>
                 <td><%= games.getString("developer") %></td>
                 <td><%= games.getString("publisher") %></td>
-                <td><img src='<%= games.getString("front_box_art") %>' height="200" width="200"></td>
-                <td><img src='<%= games.getString("back_box_art") %>' height="200" width="200"></td>
+                <td>
+                    <form action="details" method="post">
+                        <input type="hidden" name="game_id" value='<%= games.getString("game_id") %>' />
+                        <% if(session.getAttribute("username") != null) { %>
+                            <input type="hidden" name="username" value='<%= session.getAttribute("username") %>' />
+                        <% } %>
+                        <input type="submit" value="more info" />
+                    </form>
+                </td>
             </tr>
         <% } %>
     </tbody>
