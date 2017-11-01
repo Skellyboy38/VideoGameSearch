@@ -22,7 +22,7 @@ $(document).ready(function() {
 </form>
 
 <% if(session.getAttribute("username") != null) { %>
-Currently logged in as <%= session.getAttribute("username") %>
+Currently logged in as <%= session.getAttribute("username") %><br>
 <% } else {%>
 Not logged in
 <% } %>

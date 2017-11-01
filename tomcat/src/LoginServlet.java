@@ -4,6 +4,8 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.sql.*;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class LoginServlet extends HttpServlet {
 
@@ -17,9 +19,14 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        if(UserTDG.getUser(username, password) != null){
+        UserModel user = UserTDG.getUser(username, password);
+
+        if(user != null){
             HttpSession session = request.getSession();
+            String old_login = UserTDG.updateLastLogin(user, new SimpleDateFormat("dd-MM-yyyy hh:mm:ss").format(new Date()));
+
             session.setAttribute("username", username);
+            session.setAttribute("last_login", old_login);
             session.removeAttribute("login_error");
             request.getRequestDispatcher("home.jsp").forward(request, response);
          }

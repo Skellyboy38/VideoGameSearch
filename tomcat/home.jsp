@@ -14,7 +14,7 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-<h3 class="centercustom">Welcome to VideoGameSearch</h3>
+<h3 class="centercustom">Welcome to VideoGameSearch</h3><br>
 <% if(session.getAttribute("username") == null) { %>
 
 <hr>
@@ -38,7 +38,12 @@ $(document).ready(function() {
 </form>
 
 <% } else { %>
-<h4>Logged in as <%= session.getAttribute("username") %></h4>
+<h5>Logged in as <%= session.getAttribute("username") %></h5>
+<% if(session.getAttribute("last_login") == "" || session.getAttribute("last_login") == null) { %>
+    <h5>Last login: n/a</h5>
+<% } else { %>
+    <h5>Last login: <%= session.getAttribute("last_login") %></h5>
+<% } %>
 
 <form action="specials" method="post">
     <input type="hidden" name="username" value='<%= session.getAttribute("username") %>'/>
@@ -61,7 +66,6 @@ $(document).ready(function() {
         <th>Genre</th>
         <th>Release Date</th>
         <th>Developer</th>
-        <th>Publisher</th>
         <th>More Info</th>
     </thead>
     <tbody>
@@ -75,7 +79,6 @@ $(document).ready(function() {
                 <td><%= game.genre %></td>
                 <td><%= game.releaseDate %></td>
                 <td><%= game.developer %></td>
-                <td><%= game.publisher %></td>
                 <td>
                     <form action="details" method="post">
                         <input type="hidden" name="game_id" value="<%= game.gameId %>" />

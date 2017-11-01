@@ -47,6 +47,39 @@ public class UserTDG {
         }
     }
 
+    public static String updateLastLogin(UserModel user, String lastLogin) {
+        Connection con = null;
+        try{
+            con = CreateConnection.getConnection();
+            PreparedStatement ps = con.prepareStatement
+                             ("select last_login from user where user_id=?");
+            ps.setString(1, user.userId);
+            ResultSet result = ps.executeQuery();
+            result.next();
+            String old_login = result.getString("last_login");
+
+            ps = con.prepareStatement
+                             ("update user set last_login=? where user_id=?");
+            ps.setString(1, lastLogin);
+            ps.setString(2, user.userId);
+            int rs = ps.executeUpdate();
+
+            return old_login;
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            return "";
+        }
+        finally {
+            try {
+                con.close();
+            }
+            catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public static UserModel getUser(String username, String password) {
         Connection con = null;
         UserModel user = null;
