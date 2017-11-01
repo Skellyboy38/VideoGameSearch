@@ -4,37 +4,37 @@
 <web-app>
     <servlet>
         <servlet-name>HomeServlet</servlet-name>
-        <servlet-class>HomeServlet</servlet-class>
+        <servlet-class>src.HomeServlet</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>LoginServlet</servlet-class>
+        <servlet-class>src.LoginServlet</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
-        <servlet-class>LogoutServlet</servlet-class>
+        <servlet-class>src.LogoutServlet</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>RegisterServlet</servlet-class>
+        <servlet-class>src.RegisterServlet</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>DetailsServlet</servlet-name>
-        <servlet-class>DetailsServlet</servlet-class>
+        <servlet-class>src.DetailsServlet</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>CommentsServlet</servlet-name>
-        <servlet-class>CommentsServlet</servlet-class>
+        <servlet-class>src.CommentsServlet</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>SpecialsServlet</servlet-name>
-        <servlet-class>SpecialsServlet</servlet-class>
+        <servlet-class>src.SpecialsServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>

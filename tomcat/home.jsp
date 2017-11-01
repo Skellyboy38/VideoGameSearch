@@ -1,4 +1,4 @@
-<%@page import="java.sql.*"%>
+<%@page import="src.GameModel, java.util.ArrayList"%>
 <html>
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -33,17 +33,9 @@ $(document).ready(function() {
 <hr>
 <h4>Register for new users</h4>
 <br/>
-<form action="register" method="post">
-    Username:<input type="text" name="username"/>
-    Password:<input type="password" name="password"/>
+<form action="register" method="get">
     <input type="submit" value="register"/>
 </form>
-
-<% if(session.getAttribute("registration_error") != null) { %>
-    <h5><%= session.getAttribute("registration_error") %></h5>
-<%} else if(session.getAttribute("registration_confirmed") != null) {%>
-    <h5><%= session.getAttribute("registration_confirmed") %></h5>
-<% } %>
 
 <% } else { %>
 <h4>Logged in as <%= session.getAttribute("username") %></h4>
@@ -58,21 +50,7 @@ $(document).ready(function() {
 <% } %>
 <hr>
 <h5>List of current video games</h5>
-<%
-Connection con = null;
-ResultSet games = null;
-        try{
-            Class.forName("com.mysql.jdbc.Driver");
-            con=DriverManager.getConnection
-                        ("jdbc:mysql://videogamesearch_mysql_1:3306/videogames?autoReconnect=true&useSSL=false","root","password");
-            PreparedStatement ps = con.prepareStatement
-                             ("select * from game");
-            games = ps.executeQuery();
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
-%>
+<% ArrayList<GameModel> games = (ArrayList<GameModel>)session.getAttribute("games"); %>
 <table id="videogames" class="table table-hover table-bordered" cellspacing="0" width="100%">
     <thead>
         <th>Game ID</th>
@@ -87,20 +65,20 @@ ResultSet games = null;
         <th>More Info</th>
     </thead>
     <tbody>
-        <% while(games.next()) { %>
+        <% for(GameModel game : games) { %>
             <tr>
-                <td><%= games.getString("game_id") %></td>
-                <td><%= games.getString("game_name") %></td>
-                <td><%= games.getString("console") %></td>
-                <td><%= games.getString("num_players") %></td>
-                <td><%= games.getString("coop") %></td>
-                <td><%= games.getString("genre") %></td>
-                <td><%= games.getString("release_date") %></td>
-                <td><%= games.getString("developer") %></td>
-                <td><%= games.getString("publisher") %></td>
+                <td><%= game.gameId %></td>
+                <td><%= game.gameName %></td>
+                <td><%= game.console %></td>
+                <td><%= game.numPlayers %></td>
+                <td><%= game.coop %></td>
+                <td><%= game.genre %></td>
+                <td><%= game.releaseDate %></td>
+                <td><%= game.developer %></td>
+                <td><%= game.publisher %></td>
                 <td>
                     <form action="details" method="post">
-                        <input type="hidden" name="game_id" value='<%= games.getString("game_id") %>' />
+                        <input type="hidden" name="game_id" value="<%= game.gameId %>" />
                         <% if(session.getAttribute("username") != null) { %>
                             <input type="hidden" name="username" value='<%= session.getAttribute("username") %>' />
                         <% } %>
@@ -111,6 +89,5 @@ ResultSet games = null;
         <% } %>
     </tbody>
 </table>
-<% con.close(); %>
 </body>
 </html>

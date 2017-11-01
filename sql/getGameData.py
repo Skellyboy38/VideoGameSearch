@@ -113,7 +113,8 @@ CREATE TABLE videogames.comments (
         """
         print('Creating SQL script')
         for game in games:
-            print('Adding game: ' + game['GameTitle'])
+            print('Adding game'
+                  ': ' + game['GameTitle'])
             insert_query = """
 INSERT INTO videogames.game (game_id, game_name, game_description, console, num_players, coop, genre, release_date, 
 developer, publisher, front_box_art, back_box_art, logo, developer_logo, price, discount) 

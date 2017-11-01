@@ -1,3 +1,5 @@
+package src;
+
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -9,8 +11,7 @@ public class HomeServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         request.getSession().removeAttribute("login_error");
-        request.getSession().removeAttribute("registration_error");
-        request.getSession().removeAttribute("registration_confirmed");
+        request.getSession().setAttribute("games", GameTDG.getGames());
         request.getRequestDispatcher("/home.jsp").forward(request, response);
     }
 
@@ -22,8 +23,7 @@ public class HomeServlet extends HttpServlet {
         }
         response.setContentType("text/html");
         request.getSession().removeAttribute("login_error");
-        request.getSession().removeAttribute("registration_error");
-        request.getSession().removeAttribute("registration_confirmed");
+        request.getSession().setAttribute("games", GameTDG.getGames());
         request.getRequestDispatcher("/home.jsp").forward(request, response);
     }
 

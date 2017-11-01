@@ -1,4 +1,4 @@
-package models;
+package src;
 
 public class GameModel {
 

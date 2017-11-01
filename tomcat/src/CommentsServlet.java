@@ -1,3 +1,5 @@
+package src;
+
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -24,37 +26,15 @@ public class CommentsServlet extends HttpServlet {
         Date date = new Date();
         String currentDate = dateFormat.format(date);
 
-        Connection con = null;
-        try{
-            Class.forName("com.mysql.jdbc.Driver");
-            con=DriverManager.getConnection
-                        ("jdbc:mysql://videogamesearch_mysql_1:3306/videogames?autoReconnect=true&useSSL=false","root","password");
-            PreparedStatement ps =con.prepareStatement
-                             ("insert into comments(user_id, game_id, comment_date, comment_details, ratings) values(?, ?, ?, ?, ?)");
-            ps.setString(1, username);
-            ps.setString(2, gameId);
-            ps.setString(3, currentDate);
-            ps.setString(4, details);
-            ps.setString(5, rating);
-            int rs = ps.executeUpdate();
+        CommentModel comment = new CommentModel("-1", username, gameId, currentDate, details, rating);
+        CommentTDG.addComment(comment);
 
-            HttpSession session = request.getSession();
-            if(username != null || username != "null" || username != "") {
-                session.setAttribute("username", username);
-            }
-            request.getRequestDispatcher("details.jsp").forward(request, response);
+        HttpSession session = request.getSession();
+        if(username != null || username != "null" || username != "") {
+            session.setAttribute("username", username);
         }
-        catch(Exception e){
-            e.printStackTrace();
-        }
-        finally {
-            try {
-                con.close();
-            }
-            catch(Exception e) {
-                e.printStackTrace();
-            }
-        }
+        session.setAttribute("comments", CommentTDG.getComments(gameId));
+        request.getRequestDispatcher("details.jsp").forward(request, response);
     }
 
     public void destroy() {

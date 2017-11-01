@@ -1,3 +1,5 @@
+package src;
+
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -7,6 +9,11 @@ public class RegisterServlet extends HttpServlet {
 
     public void init() throws ServletException {}
 
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
+        request.getRequestDispatcher("/register.jsp").forward(request, response);
+    }
+
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         response.setContentType("text/html;charset=UTF-8");
@@ -15,35 +22,33 @@ public class RegisterServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        Connection con = null;
-        try{
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection
-                        ("jdbc:mysql://videogamesearch_mysql_1:3306/videogames?autoReconnect=true&useSSL=false","root","password");
-            PreparedStatement ps = con.prepareStatement
-                             ("insert into user(user_id, password) values(?,?)");
-            ps.setString(1, username);
-            ps.setString(2, password);
-            int rs = ps.executeUpdate();
+        UserModel user = new UserModel(
+            request.getParameter("username"),
+            request.getParameter("password"),
+            request.getParameter("firstname"),
+            request.getParameter("lastname"),
+            request.getParameter("email"),
+            request.getParameter("address1"),
+            request.getParameter("address2"),
+            request.getParameter("city"),
+            request.getParameter("state"),
+            request.getParameter("zip"),
+            request.getParameter("country"),
+            request.getParameter("credit_card_type"),
+            request.getParameter("credit_card_number"),
+            request.getParameter("credit_card_cvv"),
+            request.getParameter("credit_card_expiry")
+        );
+
+        if(UserTDG.addUser(user)) {
             HttpSession session = request.getSession();
             session.removeAttribute("registration_error");
-            session.setAttribute("registration_confirmed", "Successfully registered as " + username);
             request.getRequestDispatcher("home.jsp").forward(request, response);
         }
-        catch(Exception e){
-            e.printStackTrace();
+        else {
             HttpSession session = request.getSession();
-            session.removeAttribute("registration_confirmed");
-            session.setAttribute("registration_error", "User already exists");
-            request.getRequestDispatcher("home.jsp").forward(request, response);
-        }
-        finally {
-            try {
-                con.close();
-            }
-            catch(Exception e) {
-                e.printStackTrace();
-            }
+            session.setAttribute("registration_error", "Username already exists");
+            request.getRequestDispatcher("register.jsp").forward(request, response);
         }
     }
 

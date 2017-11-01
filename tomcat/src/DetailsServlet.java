@@ -1,3 +1,5 @@
+package src;
+
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -15,51 +17,32 @@ public class DetailsServlet extends HttpServlet {
         String gameId = request.getParameter("game_id");
         String username = request.getParameter("username");
 
-        Connection con = null;
-        try{
-            Class.forName("com.mysql.jdbc.Driver");
-            con=DriverManager.getConnection
-                        ("jdbc:mysql://videogamesearch_mysql_1:3306/videogames?autoReconnect=true&useSSL=false","root","password");
-            PreparedStatement ps =con.prepareStatement
-                             ("select * from game where game_id=?");
-            ps.setString(1, gameId);
-            ResultSet game = ps.executeQuery();
-            game.next();
+        GameModel game = GameTDG.getGame(gameId);
 
-            HttpSession session = request.getSession();
-            session.setAttribute("game_id", game.getString("game_id"));
-            session.setAttribute("game_name", game.getString("game_name"));
-            session.setAttribute("game_description", game.getString("game_description"));
-            session.setAttribute("console", game.getString("console"));
-            session.setAttribute("num_players", game.getString("num_players"));
-            session.setAttribute("coop", game.getString("coop"));
-            session.setAttribute("genre", game.getString("genre"));
-            session.setAttribute("release_date", game.getString("release_date"));
-            session.setAttribute("developer", game.getString("developer"));
-            session.setAttribute("publisher", game.getString("publisher"));
-            session.setAttribute("front_box_art", game.getString("front_box_art"));
-            session.setAttribute("back_box_art", game.getString("back_box_art"));
-            session.setAttribute("logo", game.getString("logo"));
-            session.setAttribute("developer_logo", game.getString("developer_logo"));
-            session.setAttribute("price", game.getString("price"));
-            session.setAttribute("discount", game.getString("discount"));
+        HttpSession session = request.getSession();
+        session.setAttribute("game_id", game.gameId);
+        session.setAttribute("game_name", game.gameName);
+        session.setAttribute("game_description", game.gameDescription);
+        session.setAttribute("console", game.console);
+        session.setAttribute("num_players", game.numPlayers);
+        session.setAttribute("coop", game.coop);
+        session.setAttribute("genre", game.genre);
+        session.setAttribute("release_date", game.releaseDate);
+        session.setAttribute("developer", game.developer);
+        session.setAttribute("publisher", game.publisher);
+        session.setAttribute("front_box_art", game.frontBoxArt);
+        session.setAttribute("back_box_art", game.backBoxArt);
+        session.setAttribute("logo", game.logo);
+        session.setAttribute("developer_logo", game.developerLogo);
+        session.setAttribute("price", game.price);
+        session.setAttribute("discount", game.discount);
 
-            if(username != null || username != "null" || username != "") {
-                session.setAttribute("username", username);
-            }
-            request.getRequestDispatcher("details.jsp").forward(request, response);
+        session.setAttribute("comments", CommentTDG.getComments(gameId));
+
+        if(username != null || username != "null" || username != "") {
+            session.setAttribute("username", username);
         }
-        catch(Exception e){
-            e.printStackTrace();
-        }
-        finally {
-            try {
-                con.close();
-            }
-            catch(Exception e) {
-                e.printStackTrace();
-            }
-        }
+        request.getRequestDispatcher("details.jsp").forward(request, response);
     }
 
     public void destroy() {

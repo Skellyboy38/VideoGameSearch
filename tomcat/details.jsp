@@ -1,4 +1,4 @@
-<%@page import="java.sql.*"%><html>
+<%@page import="java.util.ArrayList, src.CommentModel"%><html>
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
@@ -105,23 +105,8 @@ Not logged in
 <% } else { %>
 <h5>Log in to leave a review</h5>
 <% } %>
-<%
-Connection con = null;
-ResultSet reviews = null;
-        try{
-            Class.forName("com.mysql.jdbc.Driver");
-            con=DriverManager.getConnection
-                        ("jdbc:mysql://videogamesearch_mysql_1:3306/videogames?autoReconnect=true&useSSL=false","root","password");
-            PreparedStatement ps = con.prepareStatement
-                             ("select * from comments where game_id=?");
-            ps.setString(1, (String)session.getAttribute("game_id"));
-            reviews = ps.executeQuery();
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
-%>
 <hr>
+<% ArrayList<CommentModel> comments = (ArrayList<CommentModel>)session.getAttribute("comments"); %>
 <table id="reviews" class="table table-hover table-bordered" cellspacing="0" width="100%">
     <thead>
         <th>ID</th>
@@ -131,17 +116,16 @@ ResultSet reviews = null;
         <th>Rating</th>
     </thead>
     <tbody>
-        <% while(reviews.next()) { %>
+        <% for(CommentModel comment : comments) { %>
                 <tr>
-                    <td><%= reviews.getString("comment_id") %></td>
-                    <td><%= reviews.getString("user_id") %></td>
-                    <td><%= reviews.getString("comment_date") %></td>
-                    <td><%= reviews.getString("comment_details") %></td>
-                    <td><%= reviews.getString("ratings") %></td>
+                    <td><%= comment.commentId %></td>
+                    <td><%= comment.username %></td>
+                    <td><%= comment.currentDate %></td>
+                    <td><%= comment.details %></td>
+                    <td><%= comment.rating %></td>
                 </tr>
         <% }%>
     </tbody>
 </table>
-<% con.close(); %>
 </body>
 </html>
