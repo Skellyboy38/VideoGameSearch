@@ -73,6 +73,7 @@ CREATE TABLE videogames.user (
     credit_card_cvv VARCHAR(30),
     credit_card_expiry VARCHAR(30),
     last_login VARCHAR(30),
+    admin TINYINT(1),
     PRIMARY KEY (user_id)
 );
 
@@ -93,6 +94,7 @@ CREATE TABLE videogames.game (
     developer_logo VARCHAR(250),
     price VARCHAR(30),
     discount VARCHAR(30),
+    display TINYINT(1),
     PRIMARY KEY (game_id)
 );
 
@@ -117,8 +119,8 @@ CREATE TABLE videogames.comments (
                   ': ' + game['GameTitle'])
             insert_query = """
 INSERT INTO videogames.game (game_id, game_name, game_description, console, num_players, coop, genre, release_date, 
-developer, publisher, front_box_art, back_box_art, logo, developer_logo, price, discount) 
-VALUES('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');
+developer, publisher, front_box_art, back_box_art, logo, developer_logo, price, discount, display) 
+VALUES('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');
 
             """
             discount = str(randint(0, 100)) if randint(0, 2) == 1 else "0"
@@ -138,7 +140,8 @@ VALUES('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '
                 'N/A',
                 'N/A',
                 str(round(random.uniform(10, 150), 2)),
-                discount
+                discount,
+                1
             )
         with open("setup.sql", "a+") as f:
             f.write(sql_data)
