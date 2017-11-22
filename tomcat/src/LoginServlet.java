@@ -28,6 +28,7 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("username", username);
             session.setAttribute("last_login", old_login);
             session.removeAttribute("login_error");
+            session.removeAttribute("email_message");
             request.getRequestDispatcher("home.jsp").forward(request, response);
          }
         else {

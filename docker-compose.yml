@@ -7,7 +7,6 @@ services:
       - "8000:8080"
     volumes:
       - ./tomcat:/usr/local/tomcat/webapps/videogamesearch
-
   mysql:
     build: ./sql
     restart: always

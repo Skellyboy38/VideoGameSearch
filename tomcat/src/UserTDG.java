@@ -47,6 +47,56 @@ public class UserTDG {
         }
     }
 
+    public static String getPassword(String username) {
+        Connection con = null;
+        try{
+            con = CreateConnection.getConnection();
+            PreparedStatement ps = con.prepareStatement
+                             ("select password from user where user_id=?");
+            ps.setString(1, username);
+            ResultSet result = ps.executeQuery();
+            result.next();
+            return result.getString("password");
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            return "";
+        }
+        finally {
+            try {
+                con.close();
+            }
+            catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static String getEmail(String username) {
+        Connection con = null;
+        try{
+            con = CreateConnection.getConnection();
+            PreparedStatement ps = con.prepareStatement
+                             ("select email from user where user_id=?");
+            ps.setString(1, username);
+            ResultSet result = ps.executeQuery();
+            result.next();
+            return result.getString("email");
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            return "";
+        }
+        finally {
+            try {
+                con.close();
+            }
+            catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public static String updateLastLogin(UserModel user, String lastLogin) {
         Connection con = null;
         try{

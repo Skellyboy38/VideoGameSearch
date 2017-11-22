@@ -30,6 +30,15 @@ $(document).ready(function() {
     <h5><%= session.getAttribute("login_error") %></h5>
 <%}%>
 
+<% if(session.getAttribute("email_message") != null) { %>
+    <h5><%= session.getAttribute("email_message") %></h5>
+<%}%>
+
+<br/>
+<form action="forgot_password" method="get">
+    <input type="submit" value="Forgot Password"/>
+</form>
+
 <hr>
 <h4>Register for new users</h4>
 <br/>
