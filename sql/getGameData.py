@@ -12,7 +12,7 @@ def get_data():
     else:
         base_url = "http://thegamesdb.net/api/"
         base_image_url = "http://thegamesdb.net/banners/"
-        url = base_url + "GetGamesList.php?name=mario"
+        url = base_url + "GetGamesList.php?name=sonic"
         data = requests.get(url).content
         root = ET.fromstring(data)
         games = []
@@ -77,6 +77,24 @@ CREATE TABLE videogames.user (
     PRIMARY KEY (user_id)
 );
 
+INSERT INTO videogames.user (user_id, password, admin)
+VALUES('admin', 'admin', 1);
+
+CREATE TABLE videogames.purchase_history (
+    user_id VARCHAR(30),
+    amount VARCHAR(30),
+    date DATETIME,
+    FOREIGN KEY (user_id)
+        REFERENCES user(user_id)
+);
+
+CREATE TABLE videogames.blocked_users(
+    user_id VARCHAR(30),
+    PRIMARY KEY (user_id),
+    FOREIGN KEY (user_id)
+        REFERENCES user(user_id)
+);
+
 CREATE TABLE videogames.game (
     game_id VARCHAR(30),
     game_name VARCHAR(250),
@@ -106,6 +124,16 @@ CREATE TABLE videogames.comments (
     comment_details VARCHAR(8000),
     ratings VARCHAR(30),
     PRIMARY KEY (comment_id),
+    FOREIGN KEY (user_id)
+        REFERENCES user(user_id),
+    FOREIGN KEY (game_id)
+        REFERENCES game(game_id)
+);
+
+CREATE TABLE videogames.favorites (
+    user_id VARCHAR(30),
+    game_id VARCHAR(30),
+    PRIMARY KEY (user_id, game_id),
     FOREIGN KEY (user_id)
         REFERENCES user(user_id),
     FOREIGN KEY (game_id)
