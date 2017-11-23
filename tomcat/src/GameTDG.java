@@ -33,7 +33,8 @@ public class GameTDG {
                     result.getString("logo"),
                     result.getString("developer_logo"),
                     result.getString("price"),
-                    result.getString("discount")
+                    result.getString("discount"),
+                    result.getInt("display")
                 );
                 games.add(gameToAdd);
             }
@@ -78,7 +79,8 @@ public class GameTDG {
                     result.getString("logo"),
                     result.getString("developer_logo"),
                     result.getString("price"),
-                    result.getString("discount")
+                    result.getString("discount"),
+                    result.getInt("display")
                 );
                 games.add(gameToAdd);
             }
@@ -124,7 +126,8 @@ public class GameTDG {
                     result.getString("logo"),
                     result.getString("developer_logo"),
                     result.getString("price"),
-                    result.getString("discount")
+                    result.getString("discount"),
+                    result.getInt("display")
             );
 
             return gameToReturn;
@@ -132,6 +135,42 @@ public class GameTDG {
         catch(Exception e){
             e.printStackTrace();
             return null;
+        }
+        finally {
+            try {
+                con.close();
+            }
+            catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void toggleGameVisibility(String gameId) {
+        Connection con = null;
+        try{
+            con = CreateConnection.getConnection();
+            PreparedStatement ps = con.prepareStatement("select * from game where game_id=?");
+            ps.setString(1, gameId);
+            ResultSet result = ps.executeQuery();
+            result.next();
+
+            int oldDisplay = result.getInt("display");
+            int display;
+            if(oldDisplay == 1) {
+                display = 0;
+            }
+            else {
+                display = 1;
+            }
+
+            ps = con.prepareStatement("update game set display=? where game_id=?");
+            ps.setInt(1, display);
+            ps.setString(2, gameId);
+            ps.executeUpdate();
+        }
+        catch(Exception e){
+            e.printStackTrace();
         }
         finally {
             try {

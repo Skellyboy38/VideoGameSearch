@@ -28,6 +28,31 @@
     </servlet>
 
     <servlet>
+        <servlet-name>ToggleGameVisibilityServlet</servlet-name>
+        <servlet-class>src.ToggleGameVisibilityServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>AccountInfoServlet</servlet-name>
+        <servlet-class>src.AccountInfoServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>FavoritesServlet</servlet-name>
+        <servlet-class>src.FavoritesServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>BlockUserServlet</servlet-name>
+        <servlet-class>src.BlockUserServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>UpdateAccountInfoServlet</servlet-name>
+        <servlet-class>src.UpdateAccountInfoServlet</servlet-class>
+    </servlet>
+
+    <servlet>
         <servlet-name>DetailsServlet</servlet-name>
         <servlet-class>src.DetailsServlet</servlet-class>
     </servlet>
@@ -35,6 +60,11 @@
     <servlet>
         <servlet-name>CommentsServlet</servlet-name>
         <servlet-class>src.CommentsServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ControlPanelServlet</servlet-name>
+        <servlet-class>src.ControlPanelServlet</servlet-class>
     </servlet>
 
     <servlet>
@@ -53,6 +83,11 @@
     </servlet-mapping>
 
     <servlet-mapping>
+        <servlet-name>FavoritesServlet</servlet-name>
+        <url-pattern>/favorites</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
@@ -63,8 +98,33 @@
     </servlet-mapping>
 
     <servlet-mapping>
+        <servlet-name>BlockUserServlet</servlet-name>
+        <url-pattern>/block_user</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
         <servlet-name>ForgotPasswordServlet</servlet-name>
         <url-pattern>/forgot_password</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ControlPanelServlet</servlet-name>
+        <url-pattern>/control_panel</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ToggleGameVisibilityServlet</servlet-name>
+        <url-pattern>/toggle_game_visibility</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>AccountInfoServlet</servlet-name>
+        <url-pattern>/account_info</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>UpdateAccountInfoServlet</servlet-name>
+        <url-pattern>/update_account_info</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>

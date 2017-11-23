@@ -4,24 +4,22 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-public class SpecialsServlet extends HttpServlet {
+public class AccountInfoServlet extends HttpServlet {
 
     public void init() throws ServletException {}
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
-        request.getSession().setAttribute("games", GameTDG.getSpecials());
-        request.getRequestDispatcher("/specials.jsp").forward(request, response);
+        request.getRequestDispatcher("/accountInfo.jsp").forward(request, response);
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         String username = request.getParameter("username");
         if(username != null || username != "null" || username != "") {
-            request.getSession().setAttribute("username", username);
-            request.getSession().setAttribute("games", GameTDG.getSpecials());
             response.setContentType("text/html");
-            request.getRequestDispatcher("/specials.jsp").forward(request, response);
+            request.getSession().setAttribute("favorites", UserTDG.getFavorites(username));
+            request.getSession().setAttribute("user", UserTDG.getUserInfo(username));
+            request.getRequestDispatcher("/accountInfo.jsp").forward(request, response);
         }
         else {
             response.setContentType("text/html");

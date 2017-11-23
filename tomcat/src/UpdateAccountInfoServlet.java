@@ -3,27 +3,21 @@ package src;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
-import java.sql.*;
 
-public class RegisterServlet extends HttpServlet {
+public class UpdateAccountInfoServlet extends HttpServlet {
 
     public void init() throws ServletException {}
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
-        request.getRequestDispatcher("/register.jsp").forward(request, response);
+        request.getRequestDispatcher("/accountInfo.jsp").forward(request, response);
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-
         String username = request.getParameter("username");
-        String password = request.getParameter("password");
-
+        String oldUsername = (String)request.getSession().getAttribute("username");
         UserModel user = new UserModel(
-            request.getParameter("username"),
+            username,
             request.getParameter("password"),
             request.getParameter("firstname"),
             request.getParameter("lastname"),
@@ -41,17 +35,11 @@ public class RegisterServlet extends HttpServlet {
             0,
             0
         );
-
-        if(UserTDG.addUser(user)) {
-            HttpSession session = request.getSession();
-            session.removeAttribute("registration_error");
-            request.getRequestDispatcher("home.jsp").forward(request, response);
-        }
-        else {
-            HttpSession session = request.getSession();
-            session.setAttribute("registration_error", "Username already exists");
-            request.getRequestDispatcher("register.jsp").forward(request, response);
-        }
+        UserTDG.updateUserInfo(user, oldUsername);
+        response.setContentType("text/html");
+        request.getSession().setAttribute("favorites", UserTDG.getFavorites(username));
+        request.getSession().setAttribute("user", UserTDG.getUserInfo(username));
+        request.getRequestDispatcher("/accountInfo.jsp").forward(request, response);
     }
 
     public void destroy() {

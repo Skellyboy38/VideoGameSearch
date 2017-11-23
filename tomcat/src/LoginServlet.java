@@ -20,17 +20,24 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         UserModel user = UserTDG.getUser(username, password);
-
         if(user != null){
-            HttpSession session = request.getSession();
-            String old_login = UserTDG.updateLastLogin(user, new SimpleDateFormat("dd-MM-yyyy hh:mm:ss").format(new Date()));
+            if(user.isBlocked == 0) {
+                HttpSession session = request.getSession();
+                String old_login = UserTDG.updateLastLogin(user, new SimpleDateFormat("dd-MM-yyyy hh:mm:ss").format(new Date()));
 
-            session.setAttribute("username", username);
-            session.setAttribute("last_login", old_login);
-            session.removeAttribute("login_error");
-            session.removeAttribute("email_message");
-            request.getRequestDispatcher("home.jsp").forward(request, response);
-         }
+                session.setAttribute("username", username);
+                session.setAttribute("is_admin", UserTDG.isAdmin(username));
+                session.setAttribute("last_login", old_login);
+                session.removeAttribute("login_error");
+                session.removeAttribute("email_message");
+                request.getRequestDispatcher("home.jsp").forward(request, response);
+            }
+            else {
+                HttpSession session = request.getSession();
+                session.setAttribute("login_error", "Your account has been blocked.");
+                request.getRequestDispatcher("home.jsp").forward(request, response);
+            }
+        }
         else {
             HttpSession session = request.getSession();
             session.setAttribute("login_error", "Incorrect login");

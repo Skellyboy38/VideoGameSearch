@@ -16,51 +16,61 @@ $(document).ready(function() {
 <body>
 <h3 class="centercustom">Welcome to VideoGameSearch</h3><br>
 <% if(session.getAttribute("username") == null) { %>
+        <hr>
+        <h4>Log in below</h4>
+        <br/>
+        <form action="login" method="post">
+            Username:<input type="text" name="username"/>
+            Password:<input type="password" name="password"/>
+            <input type="submit" value="login"/>
+        </form>
 
-<hr>
-<h4>Log in below</h4>
-<br/>
-<form action="login" method="post">
-    Username:<input type="text" name="username"/>
-    Password:<input type="password" name="password"/>
-    <input type="submit" value="login"/>
-</form>
+        <% if(session.getAttribute("login_error") != null) { %>
+            <h5><%= session.getAttribute("login_error") %></h5>
+        <%}%>
 
-<% if(session.getAttribute("login_error") != null) { %>
-    <h5><%= session.getAttribute("login_error") %></h5>
-<%}%>
+        <% if(session.getAttribute("email_message") != null) { %>
+            <h5><%= session.getAttribute("email_message") %></h5>
+        <%}%>
 
-<% if(session.getAttribute("email_message") != null) { %>
-    <h5><%= session.getAttribute("email_message") %></h5>
-<%}%>
+        <br/>
+        <form action="forgot_password" method="get">
+            <input type="submit" value="Forgot Password"/>
+        </form>
 
-<br/>
-<form action="forgot_password" method="get">
-    <input type="submit" value="Forgot Password"/>
-</form>
-
-<hr>
-<h4>Register for new users</h4>
-<br/>
-<form action="register" method="get">
-    <input type="submit" value="register"/>
-</form>
-
+        <hr>
+        <h4>Register for new users</h4>
+        <br/>
+        <form action="register" method="get">
+            <input type="submit" value="register"/>
+        </form>
+        <form action="specials" method="get">
+           <input type="submit" value="view specials">
+        </form>
 <% } else { %>
-<h5>Logged in as <%= session.getAttribute("username") %></h5>
-<% if(session.getAttribute("last_login") == "" || session.getAttribute("last_login") == null) { %>
-    <h5>Last login: n/a</h5>
-<% } else { %>
-    <h5>Last login: <%= session.getAttribute("last_login") %></h5>
-<% } %>
-
-<form action="specials" method="post">
-    <input type="hidden" name="username" value='<%= session.getAttribute("username") %>'/>
-    <input type="submit" value="view specials">
-</form>
-<form action="logout" method="post">
-    <input type="submit" value="logout">
-</form>
+        <h5>Logged in as <%= session.getAttribute("username") %></h5>
+        <% if(session.getAttribute("last_login") == "" || session.getAttribute("last_login") == null) { %>
+            <h5>Last login: n/a</h5>
+        <% } else { %>
+            <h5>Last login: <%= session.getAttribute("last_login") %></h5>
+        <% } %>
+        <form action="logout" method="post">
+            <input type="submit" value="logout">
+        </form>
+        <form action="specials" method="post">
+           <input type="hidden" name="username" value='<%= session.getAttribute("username") %>'/>
+           <input type="submit" value="view specials">
+        </form>
+        <% if((int)session.getAttribute("is_admin") == 1) { %>
+            <form action="control_panel" method="post">
+                <input type="submit" value="Control Panel">
+            </form>
+        <% } else {%>
+            <form action="account_info" method="post">
+                <input type="hidden" name="username" value='<%= session.getAttribute("username") %>'>
+                <input type="submit" value="Account Information">
+            </form>
+        <% } %>
 <% } %>
 <hr>
 <h5>List of current video games</h5>

@@ -16,6 +16,8 @@ public class UserModel {
     public String creditCardNumber;
     public String creditCardCvv;
     public String creditCardExpiry;
+    public int isAdmin;
+    public int isBlocked;
 
     public UserModel(
         String userId,
@@ -32,7 +34,9 @@ public class UserModel {
         String creditCardType,
         String creditCardNumber,
         String creditCardCvv,
-        String creditCardExpiry
+        String creditCardExpiry,
+        int isAdmin,
+        int isBlocked
     ) {
         this.userId = userId;
         this.password = password;
@@ -49,6 +53,8 @@ public class UserModel {
         this.creditCardNumber = creditCardNumber;
         this.creditCardCvv = creditCardCvv;
         this.creditCardExpiry = creditCardExpiry;
+        this.isAdmin = isAdmin;
+        this.isBlocked = isBlocked;
     }
 
 

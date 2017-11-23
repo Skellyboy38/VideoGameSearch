@@ -18,6 +18,7 @@ public class GameModel {
     public String developerLogo;
     public String price;
     public String discount;
+    public int display;
 
     public GameModel(
         String gameId,
@@ -35,7 +36,8 @@ public class GameModel {
         String logo,
         String developerLogo,
         String price,
-        String discount
+        String discount,
+        int display
     ) {
         this.gameId = gameId;
         this.gameName = gameName;
@@ -53,6 +55,7 @@ public class GameModel {
         this.developerLogo = developerLogo;
         this.price = price;
         this.discount = discount;
+        this.display = display;
     }
 
 
