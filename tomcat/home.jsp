@@ -70,6 +70,9 @@ $(document).ready(function() {
                 <input type="hidden" name="username" value='<%= session.getAttribute("username") %>'>
                 <input type="submit" value="Account Information">
             </form>
+            <form action="view_shopping_cart" method="post">
+                <input type="submit" value="View Shopping Cart">
+            </form>
         <% } %>
 <% } %>
 <hr>

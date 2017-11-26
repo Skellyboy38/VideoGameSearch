@@ -28,6 +28,21 @@
     </servlet>
 
     <servlet>
+        <servlet-name>AddToCartServlet</servlet-name>
+        <servlet-class>src.AddToCartServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ViewShoppingCartServlet</servlet-name>
+        <servlet-class>src.ViewShoppingCartServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>UpdateShoppingCartServlet</servlet-name>
+        <servlet-class>src.UpdateShoppingCartServlet</servlet-class>
+    </servlet>
+
+    <servlet>
         <servlet-name>ToggleGameVisibilityServlet</servlet-name>
         <servlet-class>src.ToggleGameVisibilityServlet</servlet-class>
     </servlet>
@@ -90,6 +105,21 @@
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>AddToCartServlet</servlet-name>
+        <url-pattern>/add_to_cart</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ViewShoppingCartServlet</servlet-name>
+        <url-pattern>/view_shopping_cart</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>UpdateShoppingCartServlet</servlet-name>
+        <url-pattern>/update_shopping_cart</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>

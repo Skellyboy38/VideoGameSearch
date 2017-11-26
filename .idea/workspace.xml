@@ -2,24 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1fbbc958-1c15-4ad9-b528-df9b6473a108" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/GameModel.class" afterPath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/GameModel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/GameTDG.class" afterPath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/GameTDG.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/LoginServlet.class" afterPath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/LoginServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/RegisterServlet.class" afterPath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/RegisterServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/SpecialsServlet.class" afterPath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/SpecialsServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/UserModel.class" afterPath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/UserModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/UserTDG.class" afterPath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/UserTDG.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/LogoutServlet.class" afterPath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/LogoutServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/tomcat/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/details.jsp" afterPath="$PROJECT_DIR$/tomcat/details.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/home.jsp" afterPath="$PROJECT_DIR$/tomcat/home.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/specials.jsp" afterPath="$PROJECT_DIR$/tomcat/specials.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/src/GameModel.java" afterPath="$PROJECT_DIR$/tomcat/src/GameModel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/src/GameTDG.java" afterPath="$PROJECT_DIR$/tomcat/src/GameTDG.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/src/LoginServlet.java" afterPath="$PROJECT_DIR$/tomcat/src/LoginServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/src/RegisterServlet.java" afterPath="$PROJECT_DIR$/tomcat/src/RegisterServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/src/SpecialsServlet.java" afterPath="$PROJECT_DIR$/tomcat/src/SpecialsServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/src/UserModel.java" afterPath="$PROJECT_DIR$/tomcat/src/UserModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/src/UserTDG.java" afterPath="$PROJECT_DIR$/tomcat/src/UserTDG.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/src/LogoutServlet.java" afterPath="$PROJECT_DIR$/tomcat/src/LogoutServlet.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,41 +20,81 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UpdateAccountInfoServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tomcat/src/UpdateAccountInfoServlet.java">
+      <file leaf-file-name="details.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tomcat/details.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="47" selection-end-column="1" />
+            <state relative-caret-position="708">
+              <caret line="85" column="70" lean-forward="false" selection-start-line="85" selection-start-column="70" selection-end-line="85" selection-end-column="70" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tomcat/src/UserModel.java">
+      <file leaf-file-name="AddToCartServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tomcat/src/AddToCartServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="39" column="7" lean-forward="false" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
+            <state relative-caret-position="345">
+              <caret line="33" column="60" lean-forward="false" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="94" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tomcat/src/LoginServlet.java">
+      <file leaf-file-name="UpdateShoppingCartServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tomcat/src/UpdateShoppingCartServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="24" column="59" lean-forward="false" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
+            <state relative-caret-position="220">
+              <caret line="14" column="77" lean-forward="true" selection-start-line="14" selection-start-column="77" selection-end-line="14" selection-end-column="77" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlockUserServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tomcat/src/BlockUserServlet.java">
+      <file leaf-file-name="GameTDG.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tomcat/src/GameTDG.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" column="85" lean-forward="false" selection-start-line="20" selection-start-column="85" selection-end-line="20" selection-end-column="85" />
+            <state relative-caret-position="438">
+              <caret line="116" column="27" lean-forward="false" selection-start-line="116" selection-start-column="27" selection-end-line="116" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="specials.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tomcat/specials.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="66" column="53" lean-forward="false" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shoppingCart.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tomcat/shoppingCart.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="244">
+              <caret line="25" column="62" lean-forward="true" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tomcat/home.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="70" column="64" lean-forward="false" selection-start-line="70" selection-start-column="64" selection-end-line="70" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewShoppingCartServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tomcat/src/ViewShoppingCartServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -73,58 +103,18 @@
       <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tomcat/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="46" column="59" lean-forward="false" selection-start-line="46" selection-start-column="59" selection-end-line="46" selection-end-column="59" />
+            <state relative-caret-position="504">
+              <caret line="121" column="56" lean-forward="false" selection-start-line="121" selection-start-column="56" selection-end-line="121" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controlPanel.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tomcat/controlPanel.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="61" column="24" lean-forward="true" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ControlPanelServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tomcat/src/ControlPanelServlet.java">
+      <file leaf-file-name="LogoutServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tomcat/src/LogoutServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="342">
-              <caret line="19" column="85" lean-forward="true" selection-start-line="19" selection-start-column="85" selection-end-line="19" selection-end-column="85" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserTDG.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tomcat/src/UserTDG.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="106" column="44" lean-forward="false" selection-start-line="106" selection-start-column="44" selection-end-line="106" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tomcat/src/LoginModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="51" lean-forward="false" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="setup.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sql/setup.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="36" column="24" lean-forward="false" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+              <caret line="19" column="62" lean-forward="false" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -143,6 +133,9 @@
       <find>UserModel {</find>
       <find>update</find>
       <find>getUser</find>
+      <find>getPrice</find>
+      <find>get</find>
+      <find>gameName</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -159,25 +152,31 @@
         <option value="$PROJECT_DIR$/tomcat/src/SpecialsServlet.java" />
         <option value="$PROJECT_DIR$/tomcat/src/GameModel.java" />
         <option value="$PROJECT_DIR$/tomcat/src/ToggleGameVisibility.java" />
-        <option value="$PROJECT_DIR$/tomcat/src/GameTDG.java" />
         <option value="$PROJECT_DIR$/tomcat/src/ToggleGameVisibilityServlet.java" />
-        <option value="$PROJECT_DIR$/tomcat/src/AccountInfoServlet.java" />
         <option value="$PROJECT_DIR$/tomcat/src/FavoritesServlet.java" />
         <option value="$PROJECT_DIR$/tomcat/accountInfo.jsp" />
         <option value="$PROJECT_DIR$/tomcat/specials.jsp" />
         <option value="$PROJECT_DIR$/sql/getGameData.py" />
-        <option value="$PROJECT_DIR$/tomcat/home.jsp" />
         <option value="$PROJECT_DIR$/tomcat/src/UpdateAccountInfoServlet.java" />
         <option value="$PROJECT_DIR$/tomcat/src/RegisterServlet.java" />
         <option value="$PROJECT_DIR$/tomcat/src/UserModel.java" />
         <option value="$PROJECT_DIR$/tomcat/src/LoginServlet.java" />
-        <option value="$PROJECT_DIR$/tomcat/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/sql/setup.sql" />
         <option value="$PROJECT_DIR$/tomcat/src/BlockUserServlet.java" />
         <option value="$PROJECT_DIR$/tomcat/src/LoginModel.java" />
         <option value="$PROJECT_DIR$/tomcat/src/ControlPanelServlet.java" />
         <option value="$PROJECT_DIR$/tomcat/src/UserTDG.java" />
         <option value="$PROJECT_DIR$/tomcat/controlPanel.jsp" />
+        <option value="$PROJECT_DIR$/tomcat/src/AccountInfoServlet.java" />
+        <option value="$PROJECT_DIR$/tomcat/details.jsp" />
+        <option value="$PROJECT_DIR$/tomcat/src/GameTDG.java" />
+        <option value="$PROJECT_DIR$/tomcat/src/LogoutServlet.java" />
+        <option value="$PROJECT_DIR$/tomcat/home.jsp" />
+        <option value="$PROJECT_DIR$/tomcat/src/ViewShoppingCartServlet.java" />
+        <option value="$PROJECT_DIR$/tomcat/src/AddToCartServlet.java" />
+        <option value="$PROJECT_DIR$/tomcat/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/tomcat/src/UpdateShoppingCartServlet.java" />
+        <option value="$PROJECT_DIR$/tomcat/shoppingCart.jsp" />
       </list>
     </option>
   </component>
@@ -333,14 +332,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tomcat/details.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tomcat/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -421,38 +412,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tomcat/register.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="16" column="38" lean-forward="false" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomcat/src/AccountInfoServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="85" lean-forward="false" selection-start-line="20" selection-start-column="85" selection-end-line="20" selection-end-column="85" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomcat/accountInfo.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="38" column="51" lean-forward="false" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomcat/src/GameTDG.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="62" column="49" lean-forward="false" selection-start-line="62" selection-start-column="49" selection-end-line="62" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tomcat/src/FavoritesServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -471,22 +430,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tomcat/home.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="65" column="59" lean-forward="true" selection-start-line="65" selection-start-column="59" selection-end-line="65" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomcat/specials.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="99" column="16" lean-forward="true" selection-start-line="99" selection-start-column="16" selection-end-line="99" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tomcat/src/RegisterServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
@@ -499,14 +442,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="47" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomcat/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="46" column="59" lean-forward="false" selection-start-line="46" selection-start-column="59" selection-end-line="46" selection-end-column="59" />
           <folding />
         </state>
       </provider>
@@ -562,15 +497,119 @@
     <entry file="file://$PROJECT_DIR$/tomcat/src/ControlPanelServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
-          <caret line="19" column="85" lean-forward="true" selection-start-line="19" selection-start-column="85" selection-end-line="19" selection-end-column="85" />
+          <caret line="19" column="85" lean-forward="false" selection-start-line="19" selection-start-column="85" selection-end-line="19" selection-end-column="85" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tomcat/controlPanel.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="61" column="24" lean-forward="true" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
+        <state relative-caret-position="576">
+          <caret line="65" column="28" lean-forward="false" selection-start-line="65" selection-start-column="28" selection-end-line="68" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/src/AccountInfoServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="85" lean-forward="false" selection-start-line="20" selection-start-column="85" selection-end-line="20" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/register.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="16" column="38" lean-forward="false" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/accountInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="134" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/details.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="708">
+          <caret line="85" column="70" lean-forward="false" selection-start-line="85" selection-start-column="70" selection-end-line="85" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/src/LogoutServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="62" lean-forward="false" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="70" column="64" lean-forward="false" selection-start-line="70" selection-start-column="64" selection-end-line="70" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/src/GameTDG.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="116" column="27" lean-forward="false" selection-start-line="116" selection-start-column="27" selection-end-line="116" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="121" column="56" lean-forward="false" selection-start-line="121" selection-start-column="56" selection-end-line="121" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/src/ViewShoppingCartServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/specials.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="66" column="53" lean-forward="false" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/src/AddToCartServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="33" column="60" lean-forward="false" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/src/UpdateShoppingCartServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="14" column="77" lean-forward="true" selection-start-line="14" selection-start-column="77" selection-end-line="14" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/shoppingCart.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="25" column="62" lean-forward="true" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
           <folding />
         </state>
       </provider>

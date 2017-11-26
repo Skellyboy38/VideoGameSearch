@@ -100,6 +100,60 @@ public class GameTDG {
         }
     }
 
+    public static String getUnitPrice(String gameId) {
+        Connection con = null;
+        try{
+            con = CreateConnection.getConnection();
+            PreparedStatement ps = con.prepareStatement("select price, discount from game where game_id=?");
+            ps.setString(1, gameId);
+            ResultSet result = ps.executeQuery();
+
+            result.next();
+
+            String price = result.getString("price");
+            String discount = result.getString("discount");
+            return "" + Math.round(Float.parseFloat(price) * (100-Float.parseFloat(discount)))/100.0;
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            return null;
+        }
+        finally {
+            try {
+                con.close();
+            }
+            catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static String getGameName(String gameId) {
+        Connection con = null;
+        try{
+            con = CreateConnection.getConnection();
+            PreparedStatement ps = con.prepareStatement("select game_name from game where game_id=?");
+            ps.setString(1, gameId);
+            ResultSet result = ps.executeQuery();
+
+            result.next();
+
+            return result.getString("game_name");
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            return null;
+        }
+        finally {
+            try {
+                con.close();
+            }
+            catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public static GameModel getGame(String gameId) {
         Connection con = null;
         try{

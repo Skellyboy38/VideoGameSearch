@@ -79,6 +79,16 @@ Not logged in
         <td>Discount:</td>
         <td><%= session.getAttribute("discount") %>% off</td>
     </tr>
+    <tr>
+            <td>Add to Cart: </td>
+            <td>
+                 <form action="add_to_cart" method="post">
+                     <input type="number" name="quantity" value="1" />
+                     <input type="hidden" name="game_id" value='<%= session.getAttribute("game_id") %>' />
+                     <input type="submit" value="Add to cart" />
+                 </form>
+            <td>
+    </tr>
     <% } %>
 </table>
 <h3>Reviews</h3>
