@@ -1,4 +1,4 @@
-<%@page import="java.util.ArrayList, src.GameModel, src.UserModel, src.LoginModel"%><html>
+<%@page import="java.util.ArrayList, src.GameModel, src.UserModel, src.LoginModel, src.PaymentModel"%><html>
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
@@ -10,6 +10,7 @@
 $(document).ready(function() {
   $('#accounts').DataTable();
   $('#logins').DataTable();
+  $('#payments').DataTable();
 });
 </script>
 </head>
@@ -42,7 +43,26 @@ $(document).ready(function() {
     <% } %>
     <br><br><br>
     <h3>Purchase History</h3>
+    <% ArrayList<PaymentModel> payments = (ArrayList<PaymentModel>)session.getAttribute("payments"); %>
     <hr>
+    <% if((int)session.getAttribute("is_admin") == 1) { %>
+        <table id="payments" class="table table-hover table-bordered" cellspacing="0" width="100%">
+        <thead>
+            <th>Username</th>
+            <th>Amount</th>
+            <th>Date</th>
+        </thead>
+        <tbody>
+            <% for(PaymentModel payment : payments) { %>
+                    <tr>
+                        <td><%= payment.userId %></td>
+                        <td><%= payment.amount %></td>
+                        <td><%= payment.date %></td>
+                    </tr>
+            <% }%>
+        </tbody>
+        </table>
+    <% } %>
     <br><br><br>
     <h3>Inventory</h3>
     <hr>

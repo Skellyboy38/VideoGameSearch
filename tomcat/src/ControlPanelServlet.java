@@ -17,6 +17,7 @@ public class ControlPanelServlet extends HttpServlet {
         response.setContentType("text/html");
         request.getSession().setAttribute("users", UserTDG.getRegularUsers());
         request.getSession().setAttribute("logins", UserTDG.getLogins());
+        request.getSession().setAttribute("payments", PaymentTDG.getPayments());
         request.getRequestDispatcher("/controlPanel.jsp").forward(request, response);
     }
 

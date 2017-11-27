@@ -43,6 +43,11 @@
     </servlet>
 
     <servlet>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <servlet-class>src.CheckoutServlet</servlet-class>
+    </servlet>
+
+    <servlet>
         <servlet-name>ToggleGameVisibilityServlet</servlet-name>
         <servlet-class>src.ToggleGameVisibilityServlet</servlet-class>
     </servlet>
@@ -105,6 +110,11 @@
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <url-pattern>/checkout</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
