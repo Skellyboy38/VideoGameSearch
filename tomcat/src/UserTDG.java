@@ -74,7 +74,8 @@ public class UserTDG {
                     result.getString("credit_card_cvv"),
                     result.getString("credit_card_expiry"),
                     result.getInt("admin"),
-                    result.getInt("blocked")
+                    result.getInt("blocked"),
+                    result.getInt("number_attempts")
                 );
             return user;
         }
@@ -154,7 +155,8 @@ public class UserTDG {
                     result.getString("credit_card_cvv"),
                     result.getString("credit_card_expiry"),
                     result.getInt("admin"),
-                    result.getInt("blocked")
+                    result.getInt("blocked"),
+                    result.getInt("number_attempts")
                 );
 
                 ps = con.prepareStatement
@@ -201,6 +203,29 @@ public class UserTDG {
             ps.setString(14, user.creditCardCvv);
             ps.setString(15, user.creditCardExpiry);
             ps.setString(16, oldUsername);
+            int rs = ps.executeUpdate();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                con.close();
+            }
+            catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void setPassword(String username, String newPassword) {
+        Connection con = null;
+        try{
+            con = CreateConnection.getConnection();
+            PreparedStatement ps = con.prepareStatement
+                             ("update user set password=? where user_id=?");
+            ps.setString(1, newPassword);
+            ps.setString(2, username);
             int rs = ps.executeUpdate();
         }
         catch(Exception e){
@@ -299,6 +324,31 @@ public class UserTDG {
         }
     }
 
+    public static int getNumberAttempts(String username) {
+        Connection con = null;
+        try{
+            con = CreateConnection.getConnection();
+            PreparedStatement ps = con.prepareStatement
+                             ("select number_attempts from user where user_id=?");
+            ps.setString(1, username);
+            ResultSet result = ps.executeQuery();
+            result.next();
+            return result.getInt("number_attempts");
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            return 0;
+        }
+        finally {
+            try {
+                con.close();
+            }
+            catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public static int isAdmin(String username) {
         Connection con = null;
         try{
@@ -351,7 +401,8 @@ public class UserTDG {
                     result.getString("credit_card_cvv"),
                     result.getString("credit_card_expiry"),
                     result.getInt("admin"),
-                    result.getInt("blocked")
+                    result.getInt("blocked"),
+                    result.getInt("number_attempts")
                 );
                 users.add(user);
             }
@@ -361,6 +412,28 @@ public class UserTDG {
         catch(Exception e){
             e.printStackTrace();
             return null;
+        }
+        finally {
+            try {
+                con.close();
+            }
+            catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void blockUser(String username) {
+        Connection con = null;
+        try{
+            con = CreateConnection.getConnection();
+            PreparedStatement ps = con.prepareStatement
+                             ("update user set blocked=1 where user_id=?");
+            ps.setString(1, username);
+            ps.executeUpdate();
+        }
+        catch(Exception e){
+            e.printStackTrace();
         }
         finally {
             try {
@@ -431,6 +504,29 @@ public class UserTDG {
         }
     }
 
+    public static void setNumberAttempts(String username, int numberAttempts) {
+        Connection con = null;
+        try{
+            con = CreateConnection.getConnection();
+            PreparedStatement ps = con.prepareStatement
+                             ("update user set number_attempts=? where user_id=?");
+            ps.setInt(1, numberAttempts);
+            ps.setString(2, username);
+            int rs = ps.executeUpdate();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                con.close();
+            }
+            catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public static void addFavorite(String username, String gameId) {
         Connection con = null;
         try{
@@ -486,7 +582,8 @@ public class UserTDG {
                     gameResult.getString("developer_logo"),
                     gameResult.getString("price"),
                     gameResult.getString("discount"),
-                    gameResult.getInt("display")
+                    gameResult.getInt("display"),
+                    gameResult.getInt("inventory")
                 );
                 favorites.add(gameToAdd);
             }

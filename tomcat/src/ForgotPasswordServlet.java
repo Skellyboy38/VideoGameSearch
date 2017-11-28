@@ -4,6 +4,7 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.sql.*;
+import java.util.UUID;
 
 public class ForgotPasswordServlet extends HttpServlet {
 
@@ -23,7 +24,9 @@ public class ForgotPasswordServlet extends HttpServlet {
         String emailAttempt = request.getParameter("email");
 
         String email = UserTDG.getEmail(username);
-        String password = UserTDG.getPassword(username);
+        String newPassword = UUID.randomUUID().toString().replace("-", "").substring(0, 9);
+
+        UserTDG.setPassword(username, newPassword);
 
         if(!emailAttempt.equalsIgnoreCase(email)) {
             HttpSession session = request.getSession();
@@ -31,7 +34,7 @@ public class ForgotPasswordServlet extends HttpServlet {
             request.getRequestDispatcher("home.jsp").forward(request, response);
         }
 
-        SendMail.send(email, "Forgot Password", "Your password is: "+password, "robertComp387", "robertcomp");
+        SendMail.send(email, "Forgot Password", username+", your new password is: "+newPassword+". Don't forget to change your password in the profile page.", "robertComp387", "robertcomp");
         HttpSession session = request.getSession();
         session.setAttribute("email_message", "Email sent to: "+email);
         request.getRequestDispatcher("home.jsp").forward(request, response);

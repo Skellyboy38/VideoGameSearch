@@ -33,6 +33,7 @@ public class UpdateAccountInfoServlet extends HttpServlet {
             request.getParameter("credit_card_cvv"),
             request.getParameter("credit_card_expiry"),
             0,
+            0,
             0
         );
         UserTDG.updateUserInfo(user, oldUsername);

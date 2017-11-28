@@ -88,29 +88,61 @@ $(document).ready(function() {
         <th>Genre</th>
         <th>Release Date</th>
         <th>Developer</th>
+        <th>Inventory</th>
         <th>More Info</th>
+        <% if((int)session.getAttribute("is_admin") == 1) { %>
+            <th>Save Changes</th>
+        <% } %>
     </thead>
     <tbody>
         <% for(GameModel game : games) { %>
-            <tr>
-                <td><%= game.gameId %></td>
-                <td><%= game.gameName %></td>
-                <td><%= game.console %></td>
-                <td><%= game.numPlayers %></td>
-                <td><%= game.coop %></td>
-                <td><%= game.genre %></td>
-                <td><%= game.releaseDate %></td>
-                <td><%= game.developer %></td>
-                <td>
-                    <form action="details" method="post">
-                        <input type="hidden" name="game_id" value="<%= game.gameId %>" />
-                        <% if(session.getAttribute("username") != null) { %>
-                            <input type="hidden" name="username" value='<%= session.getAttribute("username") %>' />
-                        <% } %>
-                        <input type="submit" value="more info" />
+            <% if((int)session.getAttribute("is_admin") == 1) { %>
+                <tr>
+                    <td><%= game.gameId %></td>
+                    <form action="modify_game" method="post">
+                        <input type="hidden" name="game_id" value="<%= game.gameId %>"/>
+                        <td><input type="text" name="game_name" value="<%= game.gameName %>"/></td>
+                        <td><input type="text" name="console" value="<%= game.console %>"/></td>
+                        <td><input type="text" name="num_players" value="<%= game.numPlayers %>"/></td>
+                        <td><input type="text" name="coop" value="<%= game.coop %>"/></td>
+                        <td><input type="text" name="genre" value="<%= game.genre %>"/></td>
+                        <td><input type="text" name="release_date" value="<%= game.releaseDate %>"/></td>
+                        <td><input type="text" name="developer" value="<%= game.developer %>"/></td>
+                        <td><input type="number" name="inventory" value="<%= game.inventory %>"/></td>
+                        <td><input type="submit" value="Save Changes"></td>
                     </form>
-                </td>
-            </tr>
+                    <td>
+                        <form action="details" method="post">
+                            <input type="hidden" name="game_id" value="<%= game.gameId %>" />
+                            <% if(session.getAttribute("username") != null) { %>
+                                <input type="hidden" name="username" value='<%= session.getAttribute("username") %>' />
+                            <% } %>
+                            <input type="submit" value="more info" />
+                        </form>
+                    </td>
+                 </tr>
+            <% } else { %>
+                <tr>
+                    <td><%= game.gameId %></td>
+                    <td><%= game.gameName %></td>
+                    <td><%= game.console %></td>
+                    <td><%= game.numPlayers %></td>
+                    <td><%= game.coop %></td>
+                    <td><%= game.genre %></td>
+                    <td><%= game.releaseDate %></td>
+                    <td><%= game.developer %></td>
+                    <td><%= game.inventory %></td>
+                    <td>
+                        <form action="details" method="post">
+                            <input type="hidden" name="game_id" value="<%= game.gameId %>" />
+                            <% if(session.getAttribute("username") != null) { %>
+                                <input type="hidden" name="username" value='<%= session.getAttribute("username") %>' />
+                            <% } %>
+                            <input type="submit" value="more info" />
+                        </form>
+                    </td>
+                </tr>
+            <% } %>
         <% } %>
     </tbody>
 </table>

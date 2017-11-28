@@ -39,6 +39,7 @@ public class RegisterServlet extends HttpServlet {
             request.getParameter("credit_card_cvv"),
             request.getParameter("credit_card_expiry"),
             0,
+            0,
             0
         );
 

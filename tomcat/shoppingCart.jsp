@@ -25,7 +25,8 @@ $(document).ready(function() {
     <% Map<String, Map<String, String>> shoppingCart = (HashMap<String, Map<String, String>>)session.getAttribute("shopping_cart"); %>
     <% float totalPrice = 0f; %>
     <% if(shoppingCart == null || shoppingCart.isEmpty()) { %>
-        <h5>You currently do not have any games in your shopping cart. Search through the games to add some.
+        <h5>You currently do not have any games in your shopping cart. Search through the games to add some.</h5>
+        <br><br>
     <% } else { %>
         <table id="shopping_cart" class="table table-hover table-bordered" cellspacing="0" width="100%">
         <thead>
@@ -55,13 +56,16 @@ $(document).ready(function() {
         </tbody>
         </table>
         <h4>Total: <%= ""+totalPrice %></h4>
+        <form action="empty_cart" method="post">
+            <input type="submit" value="Empty Cart" />
+        </form>
         <form action="checkout" method="post">
             <input type="hidden" name="total_price" value="<%= totalPrice %>" />
             <input type="submit" value="Checkout" />
         </form>
-        <% if(session.getAttribute("checkout_error") != null) { %>
-            <%= session.getAttribute("checkout_error") %>
-        <% } %>
+    <% } %>
+    <% if(session.getAttribute("checkout_error") != null) { %>
+        <h6><%= session.getAttribute("checkout_error") %></h6>
     <% } %>
 <% } %>
     </body>

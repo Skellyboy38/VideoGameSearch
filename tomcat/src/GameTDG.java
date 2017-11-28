@@ -34,7 +34,8 @@ public class GameTDG {
                     result.getString("developer_logo"),
                     result.getString("price"),
                     result.getString("discount"),
-                    result.getInt("display")
+                    result.getInt("display"),
+                    result.getInt("inventory")
                 );
                 games.add(gameToAdd);
             }
@@ -80,7 +81,8 @@ public class GameTDG {
                     result.getString("developer_logo"),
                     result.getString("price"),
                     result.getString("discount"),
-                    result.getInt("display")
+                    result.getInt("display"),
+                    result.getInt("inventory")
                 );
                 games.add(gameToAdd);
             }
@@ -154,6 +156,36 @@ public class GameTDG {
         }
     }
 
+    public static void modifyGame(GameModel game) {
+        Connection con = null;
+        try{
+            con = CreateConnection.getConnection();
+            PreparedStatement ps = con.prepareStatement
+                             ("update game set game_name=?, console=?, num_players=?, coop=?, genre=?, release_date=?, developer=?, inventory=? where game_id=?");
+            ps.setString(1, game.gameName);
+            ps.setString(2, game.console);
+            ps.setString(3, game.numPlayers);
+            ps.setString(4, game.coop);
+            ps.setString(5, game.genre);
+            ps.setString(6, game.releaseDate);
+            ps.setString(7, game.developer);
+            ps.setInt(8, game.inventory);
+            ps.setString(9, game.gameId);
+            int rs = ps.executeUpdate();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                con.close();
+            }
+            catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public static GameModel getGame(String gameId) {
         Connection con = null;
         try{
@@ -181,7 +213,8 @@ public class GameTDG {
                     result.getString("developer_logo"),
                     result.getString("price"),
                     result.getString("discount"),
-                    result.getInt("display")
+                    result.getInt("display"),
+                    result.getInt("inventory")
             );
 
             return gameToReturn;
@@ -189,6 +222,62 @@ public class GameTDG {
         catch(Exception e){
             e.printStackTrace();
             return null;
+        }
+        finally {
+            try {
+                con.close();
+            }
+            catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static boolean canReduceInventory(String gameId, int amountToReduce) {
+        Connection con = null;
+        try{
+            con = CreateConnection.getConnection();
+            PreparedStatement ps = con.prepareStatement("select inventory from game where game_id=?");
+            ps.setString(1, gameId);
+            ResultSet result = ps.executeQuery();
+            result.next();
+
+            int inventory = result.getInt("inventory");
+
+            return inventory >= amountToReduce;
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            return false;
+        }
+        finally {
+            try {
+                con.close();
+            }
+            catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void reduceInventory(String gameId, int amountToReduce) {
+        Connection con = null;
+        try{
+            con = CreateConnection.getConnection();
+            PreparedStatement ps = con.prepareStatement("select inventory from game where game_id=?");
+            ps.setString(1, gameId);
+            ResultSet result = ps.executeQuery();
+            result.next();
+
+            int oldInventory = result.getInt("inventory");
+
+            ps = con.prepareStatement("update game set inventory=? where game_id=?");
+            ps.setInt(1, oldInventory - amountToReduce);
+            ps.setString(2, gameId);
+            ps.executeUpdate();
+        }
+        catch(Exception e){
+            e.printStackTrace();
         }
         finally {
             try {

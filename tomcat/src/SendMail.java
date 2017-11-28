@@ -13,6 +13,7 @@ public class SendMail {
         props.put("mail.smtp.port", 587);
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
 
         Session session = Session.getInstance(props, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
@@ -30,7 +31,8 @@ public class SendMail {
             Transport.send(message);
         }
         catch(Exception e) {
-
+            System.out.println(e.getStackTrace());
+            System.out.println(e.getMessage());
         }
 
     }

@@ -25,6 +25,7 @@ public class LoginServlet extends HttpServlet {
                 HttpSession session = request.getSession();
                 String old_login = UserTDG.updateLastLogin(user, new SimpleDateFormat("dd-MM-yyyy hh:mm:ss").format(new Date()));
 
+                UserTDG.setNumberAttempts(username, 0);
                 session.setAttribute("username", username);
                 session.setAttribute("is_admin", UserTDG.isAdmin(username));
                 session.setAttribute("last_login", old_login);
@@ -39,9 +40,20 @@ public class LoginServlet extends HttpServlet {
             }
         }
         else {
-            HttpSession session = request.getSession();
-            session.setAttribute("login_error", "Incorrect login");
-            request.getRequestDispatcher("home.jsp").forward(request, response);
+            int numberAttempts = UserTDG.getNumberAttempts(username);
+            if(numberAttempts == 2) {
+                UserTDG.blockUser(username);
+                UserTDG.setNumberAttempts(username, 0);
+                HttpSession session = request.getSession();
+                session.setAttribute("login_error", "Your account has been blocked after 3 successive failed attempts.");
+                request.getRequestDispatcher("home.jsp").forward(request, response);
+            }
+            else {
+                UserTDG.setNumberAttempts(username, numberAttempts + 1);
+                HttpSession session = request.getSession();
+                session.setAttribute("login_error", "Incorrect login");
+                request.getRequestDispatcher("home.jsp").forward(request, response);
+            }
         }
     }
 
