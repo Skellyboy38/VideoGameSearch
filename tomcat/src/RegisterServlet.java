@@ -43,7 +43,7 @@ public class RegisterServlet extends HttpServlet {
             0
         );
 
-        if(UserTDG.addUser(user)) {
+        if(UserMapper.addUser(user)) {
             HttpSession session = request.getSession();
             session.removeAttribute("registration_error");
             request.getRequestDispatcher("home.jsp").forward(request, response);

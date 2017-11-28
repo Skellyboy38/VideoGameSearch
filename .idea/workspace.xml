@@ -2,36 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1fbbc958-1c15-4ad9-b528-df9b6473a108" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/CheckoutServlet.class" afterPath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/CheckoutServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/ForgotPasswordServlet.class" afterPath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/ForgotPasswordServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/GameModel.class" afterPath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/GameModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/GameTDG.class" afterPath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/GameTDG.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/HomeServlet.class" afterPath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/HomeServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/LoginServlet.class" afterPath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/LoginServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/LogoutServlet.class" afterPath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/LogoutServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/ModifyGameServlet.class" afterPath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/ModifyGameServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/RegisterServlet.class" afterPath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/RegisterServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/SendMail$1.class" afterPath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/SendMail$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/SendMail.class" afterPath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/SendMail.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/UpdateAccountInfoServlet.class" afterPath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/UpdateAccountInfoServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/UserModel.class" afterPath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/UserModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/UserTDG.class" afterPath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/UserTDG.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/ValidatePayment.class" afterPath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/ValidatePayment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/ViewShoppingCartServlet.class" afterPath="$PROJECT_DIR$/tomcat/WEB-INF/classes/src/ViewShoppingCartServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/tomcat/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/home.jsp" afterPath="$PROJECT_DIR$/tomcat/home.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/shoppingCart.jsp" afterPath="$PROJECT_DIR$/tomcat/shoppingCart.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/src/CheckoutServlet.java" afterPath="$PROJECT_DIR$/tomcat/src/CheckoutServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/src/ForgotPasswordServlet.java" afterPath="$PROJECT_DIR$/tomcat/src/ForgotPasswordServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/src/GameModel.java" afterPath="$PROJECT_DIR$/tomcat/src/GameModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/src/GameTDG.java" afterPath="$PROJECT_DIR$/tomcat/src/GameTDG.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/src/HomeServlet.java" afterPath="$PROJECT_DIR$/tomcat/src/HomeServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/src/LoginServlet.java" afterPath="$PROJECT_DIR$/tomcat/src/LoginServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/src/LogoutServlet.java" afterPath="$PROJECT_DIR$/tomcat/src/LogoutServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/src/ModifyGameServlet.java" afterPath="$PROJECT_DIR$/tomcat/src/ModifyGameServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/src/RegisterServlet.java" afterPath="$PROJECT_DIR$/tomcat/src/RegisterServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/src/SendMail.java" afterPath="$PROJECT_DIR$/tomcat/src/SendMail.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/src/UpdateAccountInfoServlet.java" afterPath="$PROJECT_DIR$/tomcat/src/UpdateAccountInfoServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/src/UserModel.java" afterPath="$PROJECT_DIR$/tomcat/src/UserModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/src/UserTDG.java" afterPath="$PROJECT_DIR$/tomcat/src/UserTDG.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/src/ValidatePayment.java" afterPath="$PROJECT_DIR$/tomcat/src/ValidatePayment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/src/ViewShoppingCartServlet.java" afterPath="$PROJECT_DIR$/tomcat/src/ViewShoppingCartServlet.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,104 +24,101 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GameTDG.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tomcat/src/GameTDG.java">
+      <file leaf-file-name="HomeServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tomcat/src/HomeServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="166" column="45" lean-forward="false" selection-start-line="166" selection-start-column="45" selection-end-line="166" selection-end-column="45" />
+            <state relative-caret-position="252">
+              <caret line="14" column="70" lean-forward="false" selection-start-line="14" selection-start-column="70" selection-end-line="14" selection-end-column="70" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserTDG.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tomcat/src/UserTDG.java">
+      <file leaf-file-name="SpecialsServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tomcat/src/SpecialsServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="184" column="30" lean-forward="false" selection-start-line="184" selection-start-column="30" selection-end-line="184" selection-end-column="30" />
+            <state relative-caret-position="360">
+              <caret line="20" column="68" lean-forward="false" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shoppingCart.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tomcat/shoppingCart.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="59" column="54" lean-forward="false" selection-start-line="59" selection-start-column="54" selection-end-line="59" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EmptyCartServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tomcat/src/EmptyCartServlet.java">
+      <file leaf-file-name="UserMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tomcat/src/UserMapper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="162">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="90">
-                <caret line="5" column="17" lean-forward="true" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddToCartServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tomcat/src/AddToCartServlet.java">
+      <file leaf-file-name="RegisterServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tomcat/src/RegisterServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="51" selection-end-column="1" />
+            <state relative-caret-position="540">
+              <caret line="48" column="80" lean-forward="false" selection-start-line="48" selection-start-column="80" selection-end-line="48" selection-end-column="80" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tomcat/home.jsp">
+      <file leaf-file-name="LoginServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tomcat/src/LoginServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="102" column="88" lean-forward="false" selection-start-line="102" selection-start-column="88" selection-end-line="102" selection-end-column="88" />
+            <state relative-caret-position="234">
+              <caret line="19" column="59" lean-forward="false" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ModifyGameServlet.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameUnitOfWork.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tomcat/src/GameUnitOfWork.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="15" column="39" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModifyGameServlet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tomcat/src/ModifyGameServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="21" column="39" lean-forward="false" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+            <state relative-caret-position="618">
+              <caret line="49" column="71" lean-forward="true" selection-start-line="49" selection-start-column="71" selection-end-line="49" selection-end-column="71" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tomcat/src/GameModel.java">
+      <file leaf-file-name="GameIdentityMap.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tomcat/src/GameIdentityMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="21" selection-end-column="25" />
+            <state relative-caret-position="144">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tomcat/WEB-INF/web.xml">
+      <file leaf-file-name="LogoutServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tomcat/src/LogoutServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="136" column="46" lean-forward="false" selection-start-line="136" selection-start-column="46" selection-end-line="136" selection-end-column="46" />
+            <state relative-caret-position="144">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="docker-compose.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -161,9 +140,13 @@
       <find>get</find>
       <find>gameName</find>
       <find>password</find>
-      <find>new UserModel</find>
       <find>block</find>
+      <find>new UserModel</find>
+      <find>.setAttribute(&quot;games&quot;</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -171,7 +154,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/tomcat/src/ForgotPassword.java" />
         <option value="$PROJECT_DIR$/tomcat/forgotPassword.jsp" />
         <option value="$PROJECT_DIR$/tomcat/src/SpecialsServlet.java" />
@@ -186,10 +168,8 @@
         <option value="$PROJECT_DIR$/tomcat/src/LoginModel.java" />
         <option value="$PROJECT_DIR$/tomcat/src/AccountInfoServlet.java" />
         <option value="$PROJECT_DIR$/tomcat/details.jsp" />
-        <option value="$PROJECT_DIR$/tomcat/src/LogoutServlet.java" />
         <option value="$PROJECT_DIR$/tomcat/src/AddToCartServlet.java" />
         <option value="$PROJECT_DIR$/tomcat/src/UpdateShoppingCartServlet.java" />
-        <option value="$PROJECT_DIR$/tomcat/src/HomeServlet.java" />
         <option value="$PROJECT_DIR$/tomcat/src/PaymentModel.java" />
         <option value="$PROJECT_DIR$/tomcat/src/ControlPanelServlet.java" />
         <option value="$PROJECT_DIR$/tomcat/controlPanel.jsp" />
@@ -199,19 +179,26 @@
         <option value="$PROJECT_DIR$/tomcat/src/UserModel.java" />
         <option value="$PROJECT_DIR$/tomcat/src/GameModel.java" />
         <option value="$PROJECT_DIR$/tomcat/src/UpdateAccountInfoServlet.java" />
-        <option value="$PROJECT_DIR$/tomcat/src/RegisterServlet.java" />
         <option value="$PROJECT_DIR$/tomcat/src/UserTDG.java" />
-        <option value="$PROJECT_DIR$/tomcat/src/LoginServlet.java" />
         <option value="$PROJECT_DIR$/tomcat/src/ValidatePayment.java" />
         <option value="$PROJECT_DIR$/tomcat/src/ViewShoppingCartServlet.java" />
         <option value="$PROJECT_DIR$/tomcat/src/CheckoutServlet.java" />
         <option value="$PROJECT_DIR$/tomcat/src/GameTDG.java" />
-        <option value="$PROJECT_DIR$/tomcat/home.jsp" />
-        <option value="$PROJECT_DIR$/tomcat/src/ModifyGameServlet.java" />
         <option value="$PROJECT_DIR$/tomcat/shoppingCart.jsp" />
         <option value="$PROJECT_DIR$/tomcat/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/tomcat/src/EmptyCartServlet.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/tomcat/home.jsp" />
+        <option value="$PROJECT_DIR$/tomcat/src/CommentModel.java" />
+        <option value="$PROJECT_DIR$/tomcat/src/RegisterServlet.java" />
+        <option value="$PROJECT_DIR$/tomcat/src/UserMapper.java" />
+        <option value="$PROJECT_DIR$/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/tomcat/src/LoginServlet.java" />
+        <option value="$PROJECT_DIR$/tomcat/src/GameUnitOfWork.java" />
+        <option value="$PROJECT_DIR$/tomcat/src/GameIdentityMap.java" />
+        <option value="$PROJECT_DIR$/tomcat/src/LogoutServlet.java" />
+        <option value="$PROJECT_DIR$/tomcat/src/HomeServlet.java" />
+        <option value="$PROJECT_DIR$/tomcat/src/ModifyGameServlet.java" />
       </list>
     </option>
   </component>
@@ -247,11 +234,6 @@
             <path>
               <item name="VideoGameSearch" type="b2602c69:ProjectViewProjectNode" />
               <item name="VideoGameSearch" type="462c0819:PsiDirectoryNode" />
-              <item name="sql" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="VideoGameSearch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VideoGameSearch" type="462c0819:PsiDirectoryNode" />
               <item name="tomcat" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -259,12 +241,6 @@
               <item name="VideoGameSearch" type="462c0819:PsiDirectoryNode" />
               <item name="tomcat" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="VideoGameSearch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VideoGameSearch" type="462c0819:PsiDirectoryNode" />
-              <item name="tomcat" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -351,14 +327,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="58" lean-forward="false" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tomcat/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -387,14 +355,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="52" lean-forward="true" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomcat/src/SpecialsServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="78" lean-forward="false" selection-start-line="21" selection-start-column="78" selection-end-line="21" selection-end-column="78" />
           <folding />
         </state>
       </provider>
@@ -449,14 +409,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tomcat/src/LogoutServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="62" lean-forward="false" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tomcat/specials.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -469,14 +421,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomcat/src/HomeServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="43" lean-forward="false" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -561,14 +505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tomcat/src/LoginServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="31" column="55" lean-forward="false" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tomcat/src/UpdateShoppingCartServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
@@ -617,14 +553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tomcat/src/RegisterServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="60" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tomcat/src/UserTDG.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -645,22 +573,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="166" column="45" lean-forward="false" selection-start-line="166" selection-start-column="45" selection-end-line="166" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomcat/home.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="102" column="88" lean-forward="false" selection-start-line="102" selection-start-column="88" selection-end-line="102" selection-end-column="88" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomcat/src/ModifyGameServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="21" column="39" lean-forward="false" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -692,7 +604,7 @@
     <entry file="file://$PROJECT_DIR$/tomcat/src/EmptyCartServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -701,10 +613,114 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="90">
-            <caret line="5" column="17" lean-forward="true" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+            <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.project">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="81" column="11" lean-forward="false" selection-start-line="81" selection-start-column="11" selection-end-line="81" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/src/CommentModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/src/RegisterServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="48" column="80" lean-forward="false" selection-start-line="48" selection-start-column="80" selection-end-line="48" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/src/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/src/GameUnitOfWork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="39" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/src/LoginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="19" column="59" lean-forward="false" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/src/SpecialsServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="68" lean-forward="false" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/src/LogoutServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/src/HomeServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="70" lean-forward="false" selection-start-line="14" selection-start-column="70" selection-end-line="14" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/src/GameIdentityMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/src/ModifyGameServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="618">
+          <caret line="49" column="71" lean-forward="true" selection-start-line="49" selection-start-column="71" selection-end-line="49" selection-end-column="71" />
+          <folding />
         </state>
       </provider>
     </entry>

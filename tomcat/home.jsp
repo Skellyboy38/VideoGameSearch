@@ -90,13 +90,13 @@ $(document).ready(function() {
         <th>Developer</th>
         <th>Inventory</th>
         <th>More Info</th>
-        <% if((int)session.getAttribute("is_admin") == 1) { %>
+        <% if(session.getAttribute("is_admin") != null && (int)session.getAttribute("is_admin") == 1) { %>
             <th>Save Changes</th>
         <% } %>
     </thead>
     <tbody>
         <% for(GameModel game : games) { %>
-            <% if((int)session.getAttribute("is_admin") == 1) { %>
+            <% if(session.getAttribute("is_admin") != null && (int)session.getAttribute("is_admin") == 1) { %>
                 <tr>
                     <td><%= game.gameId %></td>
                     <form action="modify_game" method="post">

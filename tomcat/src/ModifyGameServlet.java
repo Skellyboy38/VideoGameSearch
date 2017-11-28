@@ -40,8 +40,14 @@ public class ModifyGameServlet extends HttpServlet {
             Integer.parseInt(request.getParameter("inventory"))
         );
 
-        GameTDG.modifyGame(game);
-        request.getSession().setAttribute("games", GameTDG.getGames());
+        GameUnitOfWork uow = new GameUnitOfWork();
+        uow.registerGameToEdit(game);
+        uow.commit();
+
+        GameIdentityMap gameMap = (GameIdentityMap)request.getSession().getAttribute("gameIdentityMap");
+        gameMap.modify();
+
+        request.getSession().setAttribute("games", gameMap.getGames());
         request.getRequestDispatcher("home.jsp").forward(request, response);
 
     }

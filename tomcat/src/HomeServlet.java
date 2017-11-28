@@ -11,7 +11,9 @@ public class HomeServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         request.getSession().removeAttribute("login_error");
-        request.getSession().setAttribute("games", GameTDG.getGames());
+        GameIdentityMap gameMap = new GameIdentityMap();
+        request.getSession().setAttribute("gameIdentityMap", gameMap);
+        request.getSession().setAttribute("games", gameMap.getGames());
         request.getRequestDispatcher("/home.jsp").forward(request, response);
     }
 

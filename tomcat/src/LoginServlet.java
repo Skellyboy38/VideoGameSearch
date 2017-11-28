@@ -19,7 +19,7 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        UserModel user = UserTDG.getUser(username, password);
+        UserModel user = UserMapper.getUser(username, password);
         if(user != null){
             if(user.isBlocked == 0) {
                 HttpSession session = request.getSession();
